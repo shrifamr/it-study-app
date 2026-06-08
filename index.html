@@ -27,7 +27,10 @@
         <nav class="nav" aria-label="أقسام التطبيق">
           <button class="nav-item active" data-view="lessons">الدروس</button>
           <button class="nav-item" data-view="lab">أمثلة سريعة</button>
-          <button class="nav-item" data-view="quiz">اختبار 50 سؤال</button>
+          <button class="nav-item" data-view="quiz">MCQ</button>
+          <button class="nav-item" data-view="trueFalse">صح/غلط</button>
+          <button class="nav-item" data-view="wrong">الغلط</button>
+          <button class="nav-item" data-view="favorites">المفضلة</button>
           <button class="nav-item" data-view="sheet">ورقة المراجعة</button>
         </nav>
 
@@ -46,8 +49,8 @@
           </div>
           <div class="quick-stats">
             <div><strong id="lessonCount">0</strong><span>دروس</span></div>
-            <div><strong id="questionCount">0</strong><span>سؤال</span></div>
-            <div><strong id="exampleCount">0</strong><span>مثال</span></div>
+            <div><strong id="questionCount">0</strong><span>MCQ</span></div>
+            <div><strong id="tfCount">0</strong><span>صح/غلط</span></div>
           </div>
         </section>
 
@@ -79,7 +82,7 @@
             <div class="quiz-header">
               <div>
                 <p class="eyebrow">Computer Skills MCQ</p>
-                <h2>اختبار من ملف 50 Questions</h2>
+                <h2>اختبار MCQ موسع للفهم والحفظ</h2>
               </div>
               <div class="score-pill"><span id="scoreText">0 / 0</span></div>
             </div>
@@ -92,11 +95,63 @@
               <div id="answers" class="answers"></div>
               <div id="feedback" class="feedback hidden"></div>
               <div class="quiz-actions">
+                <button id="favoriteQuestion" class="secondary-btn">إضافة للمفضلة</button>
                 <button id="prevQuestion" class="secondary-btn">السابق</button>
                 <button id="nextQuestion" class="primary-btn">التالي</button>
               </div>
             </div>
           </div>
+        </section>
+
+        <section class="view" id="trueFalse">
+          <div class="quiz-shell">
+            <div class="quiz-header">
+              <div>
+                <p class="eyebrow">True / False</p>
+                <h2>100 سؤال صح وغلط</h2>
+              </div>
+              <div class="score-pill"><span id="tfScoreText">0 / 0</span></div>
+            </div>
+            <div class="quiz-card">
+              <div class="quiz-meta">
+                <span id="tfQuestionNumber"></span>
+                <span id="tfTopic"></span>
+              </div>
+              <h3 id="tfQuestionText"></h3>
+              <div class="answers two-choice">
+                <button class="answer-btn tf-answer" data-answer="true">صح</button>
+                <button class="answer-btn tf-answer" data-answer="false">غلط</button>
+              </div>
+              <div id="tfFeedback" class="feedback hidden"></div>
+              <div class="quiz-actions">
+                <button id="favoriteTfQuestion" class="secondary-btn">إضافة للمفضلة</button>
+                <button id="prevTfQuestion" class="secondary-btn">السابق</button>
+                <button id="nextTfQuestion" class="primary-btn">التالي</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="wrong">
+          <div class="section-heading">
+            <p class="eyebrow">Mistakes Notebook</p>
+            <h2>الأسئلة اللي غلطت فيها</h2>
+          </div>
+          <div class="review-actions">
+            <button id="clearWrong" class="secondary-btn">مسح قائمة الغلط</button>
+          </div>
+          <div class="review-grid" id="wrongGrid"></div>
+        </section>
+
+        <section class="view" id="favorites">
+          <div class="section-heading">
+            <p class="eyebrow">Favorites</p>
+            <h2>الأسئلة المفضلة</h2>
+          </div>
+          <div class="review-actions">
+            <button id="clearFavorites" class="secondary-btn">مسح المفضلة</button>
+          </div>
+          <div class="review-grid" id="favoritesGrid"></div>
         </section>
 
         <section class="view" id="sheet">
