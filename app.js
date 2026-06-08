@@ -348,6 +348,151 @@ const sheetItems = [
   ["Big Data", ["Volume: amount.", "Velocity: speed.", "Variety: data types.", "Veracity: reliability.", "Value: useful insight.", "Sources include IoT, transactions, social media, logs, JSON/XML."]]
 ];
 
+const basmaTricks = [
+  {
+    title: "تحويل Octal إلى Decimal في رقمين",
+    intro: "لو الرقم Octal مكوّن من رقمين فقط زي 46₈، اعملها بسرعة.",
+    tricks: [
+      ["الطريقة", "اضرب أول رقم على الشمال × 8، ثم اجمع عليه الرقم اللي على اليمين."],
+      ["مثال", "46₈ = 4×8 + 6 = 38."],
+      ["خد بالك", "لو ظهر 8 أو 9 في الرقم، يبقى مش Octal أصلاً."]
+    ]
+  },
+  {
+    title: "تحويل Binary إلى Decimal بسرعة",
+    intro: "لو binary قصير، احفظ أماكن القوى من اليمين.",
+    tricks: [
+      ["الأماكن", "من اليمين: 1، 2، 4، 8، 16، 32، 64، 128."],
+      ["الطريقة", "اجمع قيم الخانات اللي فوقها 1 فقط."],
+      ["مثال", "1101₂ = 8 + 4 + 1 = 13."]
+    ]
+  },
+  {
+    title: "تحويل Hex إلى Decimal في رقمين",
+    intro: "لو Hex رقمين زي A5₁₆، استخدم نفس فكرة الضرب في الأساس.",
+    tricks: [
+      ["الحروف", "A=10, B=11, C=12, D=13, E=14, F=15."],
+      ["الطريقة", "أول رقم × 16 + الرقم اللي على اليمين."],
+      ["مثال", "A5₁₆ = 10×16 + 5 = 165."]
+    ]
+  },
+  {
+    title: "من Decimal لأي نظام",
+    intro: "لو طالب منك من decimal إلى binary/octal/hex.",
+    tricks: [
+      ["الطريقة", "اقسم على الأساس وخد البواقي."],
+      ["الأهم", "اقرأ البواقي من تحت لفوق."],
+      ["مثال", "13₁₀ ÷ 2 يعطي البواقي 1,0,1,1؛ من تحت لفوق = 1101₂."]
+    ]
+  },
+  {
+    title: "Octal و Hex مع Binary",
+    intro: "دي أسرع تريكة لو التحويل بينهم مباشرة.",
+    tricks: [
+      ["Octal", "كل رقم Octal = 3 bits. مثال: 4=100 و 6=110، إذن 46₈ = 100110₂."],
+      ["Hex", "كل رقم Hex = 4 bits. مثال: A=1010 و 5=0101، إذن A5₁₆ = 10100101₂."],
+      ["العكس", "قسم binary مجموعات 3 عشان Octal، ومجموعات 4 عشان Hex."]
+    ]
+  },
+  {
+    title: "احفظ Generations بجملة واحدة",
+    intro: "لو السؤال عن الأجيال، غالباً بييجي direct.",
+    tricks: [
+      ["1st", "Vacuum tubes."],
+      ["2nd", "Transistors."],
+      ["3rd", "Integrated Circuits IC."],
+      ["4th", "Microprocessors."]
+    ]
+  },
+  {
+    title: "Input / Output / Storage",
+    intro: "لو السؤال عن device، اسأل نفسك: يدخل؟ يطلع؟ يخزن؟",
+    tricks: [
+      ["Input", "Keyboard, mouse, scanner, microphone."],
+      ["Output", "Monitor, printer, speaker."],
+      ["Storage", "USB flash drive, hard disk, optical disk."],
+      ["Processing", "CPU."]
+    ]
+  },
+  {
+    title: "System Software ولا Application؟",
+    intro: "فرقهم بكلمة: يشغّل الجهاز ولا يعمل مهمة للمستخدم؟",
+    tricks: [
+      ["System software", "Windows, Linux, macOS, Android, utilities."],
+      ["Application software", "Word, Photoshop, browser, games."],
+      ["تريكة", "لو بيشغل الجهاز أو يحميه أو يصينه = System/Utility. لو المستخدم بيعمل عليه شغل = Application."]
+    ]
+  },
+  {
+    title: "RAM / ROM / Cache",
+    intro: "دول بيتلخبطوا كتير.",
+    tricks: [
+      ["RAM", "Volatile: بتفقد البيانات لما الكهرباء تفصل."],
+      ["ROM", "Non-volatile: مش بتفقد البيانات مع فصل الكهرباء."],
+      ["Cache", "ذاكرة سريعة جداً؛ L1 أسرع من L2 و L3."]
+    ]
+  },
+  {
+    title: "CPU keywords",
+    intro: "امسك الكلمة المفتاحية في الاختيارات.",
+    tricks: [
+      ["ALU", "Arithmetic/Logic Unit = calculations and logic."],
+      ["CU", "Control Unit = control and coordination."],
+      ["Clock speed", "MHz أو GHz."],
+      ["Word size", "عدد الـ bits اللي CPU يتعامل معها مرة واحدة."]
+    ]
+  },
+  {
+    title: "Logic Gates من غير فلسفة",
+    intro: "احفظ الجمل دي وهتحل أغلب الأسئلة.",
+    tricks: [
+      ["AND", "لازم كل inputs تكون 1 عشان output = 1."],
+      ["OR", "يكفي input واحد = 1 عشان output = 1."],
+      ["NOT", "يعكس: 0 تبقى 1، و1 تبقى 0."],
+      ["Truth table", "كل احتمالات input ومعاها output."]
+    ]
+  },
+  {
+    title: "Machine Cycle",
+    intro: "ترتيبها بيتسأل مباشر.",
+    tricks: [
+      ["الترتيب", "Fetch → Decode → Execute → Store."],
+      ["تريكة حفظ", "هات التعليمة، افهمها، نفذها، خزّن النتيجة."]
+    ]
+  },
+  {
+    title: "Big Data V's",
+    intro: "لو شفت V في السؤال، اختار المعنى المناسب.",
+    tricks: [
+      ["Volume", "حجم البيانات."],
+      ["Velocity", "سرعة وصول البيانات."],
+      ["Variety", "أنواع وصيغ ومصادر مختلفة."],
+      ["Veracity", "الموثوقية والجودة."],
+      ["Value", "الفائدة والمعنى من البيانات."]
+    ]
+  },
+  {
+    title: "أنواع البيانات في Big Data",
+    intro: "Structured ولا unstructured ولا semi-structured؟",
+    tricks: [
+      ["Structured", "جداول SQL وبيانات منظمة في rows/columns."],
+      ["Unstructured", "صور، فيديو، صوت، text حر."],
+      ["Semi-structured", "JSON و XML."]
+    ]
+  },
+  {
+    title: "أنواع الكمبيوتر",
+    intro: "امسك الاستخدام.",
+    tricks: [
+      ["Personal computer", "Desktop/laptop لشخص واحد."],
+      ["Mobile device", "Smartphone/tablet."],
+      ["Embedded", "داخل منتج: car, thermostat."],
+      ["Mainframe", "بنوك وجامعات ومؤسسات كبيرة."],
+      ["Supercomputer", "الأسرع والأقوى والأغلى."]
+    ]
+  }
+];
+
 let activeLesson = 0;
 let completed = new Set(JSON.parse(localStorage.getItem("itCompletedLessons") || "[]"));
 let currentQuestion = 0;
@@ -481,6 +626,18 @@ function renderSheet() {
   `).join("");
 }
 
+function renderBasma() {
+  $("#basmaGrid").innerHTML = basmaTricks.map((item) => `
+    <article class="basma-card">
+      <h3>${item.title}</h3>
+      <p>${item.intro}</p>
+      <ul>
+        ${item.tricks.map(([label, text]) => `<li><strong>${label}:</strong> ${text}</li>`).join("")}
+      </ul>
+    </article>
+  `).join("");
+}
+
 function reviewCard(type, index) {
   const isMcq = type === "mcq";
   const q = isMcq ? quiz[index] : trueFalseQuiz[index];
@@ -534,6 +691,7 @@ document.addEventListener("click", (event) => {
     $(`#${nav.dataset.view}`).classList.add("active");
     if (nav.dataset.view === "wrong") renderWrongQuestions();
     if (nav.dataset.view === "favorites") renderFavorites();
+    if (nav.dataset.view === "basma") renderBasma();
   }
 
   const lessonButton = event.target.closest(".lesson-tab");
@@ -634,3 +792,4 @@ renderTrueFalse();
 renderWrongQuestions();
 renderFavorites();
 renderSheet();
+renderBasma();
