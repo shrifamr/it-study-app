@@ -348,147 +348,180 @@ const sheetItems = [
   ["Big Data", ["Volume: amount.", "Velocity: speed.", "Variety: data types.", "Veracity: reliability.", "Value: useful insight.", "Sources include IoT, transactions, social media, logs, JSON/XML."]]
 ];
 
+const basmaPlan = [
+  ["1", "اقرأ السؤال ودور على الكلمة المفتاحية: CPU, RAM, Big Data, Binary, OS."],
+  ["2", "لو السؤال فيه رقم أو نظام عد، طبق قاعدة التحويل فوراً ولا تفكر كتير."],
+  ["3", "لو السؤال تعريف، اختار الإجابة اللي فيها نفس معنى الكلمة المفتاحية."]
+];
+
 const basmaTricks = [
   {
-    title: "تحويل Octal إلى Decimal في رقمين",
-    intro: "لو الرقم Octal مكوّن من رقمين فقط زي 46₈، اعملها بسرعة.",
-    tricks: [
-      ["الطريقة", "اضرب أول رقم على الشمال × 8، ثم اجمع عليه الرقم اللي على اليمين."],
-      ["مثال", "46₈ = 4×8 + 6 = 38."],
-      ["خد بالك", "لو ظهر 8 أو 9 في الرقم، يبقى مش Octal أصلاً."]
+    title: "التحويلات في 30 ثانية",
+    badge: "أهم كارت",
+    intro: "ده أكثر جزء ممكن يجيبلك درجات بسرعة.",
+    rules: [
+      ["Octal → Decimal", "لو رقمين: أول رقم × 8 + آخر رقم. مثال: 46₈ = 4×8 + 6 = 38."],
+      ["Hex → Decimal", "لو رقمين: أول رقم × 16 + آخر رقم. A=10. مثال: A5₁₆ = 10×16 + 5 = 165."],
+      ["Binary → Decimal", "اكتب من اليمين: 1, 2, 4, 8, 16. اجمع الخانات اللي فوقها 1 فقط."],
+      ["Decimal → أي نظام", "اقسم على الأساس واقرأ البواقي من تحت لفوق."],
+      ["تحذير", "Octal مستحيل يحتوي 8 أو 9. لو شفت 49₈ يبقى السؤال غلط أو الرقم مش Octal."]
     ]
   },
   {
-    title: "تحويل Binary إلى Decimal بسرعة",
-    intro: "لو binary قصير، احفظ أماكن القوى من اليمين.",
-    tricks: [
-      ["الأماكن", "من اليمين: 1، 2، 4، 8، 16، 32، 64، 128."],
-      ["الطريقة", "اجمع قيم الخانات اللي فوقها 1 فقط."],
-      ["مثال", "1101₂ = 8 + 4 + 1 = 13."]
+    title: "جدول الأنظمة اللي لازم يتحفظ",
+    badge: "حفظ مباشر",
+    intro: "لو ضاعت منك، ارجع لهذا الجدول.",
+    rules: [
+      ["Binary", "Base 2، أرقامه 0 و 1."],
+      ["Octal", "Base 8، أرقامه من 0 إلى 7."],
+      ["Decimal", "Base 10، أرقامه من 0 إلى 9."],
+      ["Hexadecimal", "Base 16، أرقامه 0-9 ثم A=10, B=11, C=12, D=13, E=14, F=15."]
     ]
   },
   {
-    title: "تحويل Hex إلى Decimal في رقمين",
-    intro: "لو Hex رقمين زي A5₁₆، استخدم نفس فكرة الضرب في الأساس.",
-    tricks: [
-      ["الحروف", "A=10, B=11, C=12, D=13, E=14, F=15."],
-      ["الطريقة", "أول رقم × 16 + الرقم اللي على اليمين."],
-      ["مثال", "A5₁₆ = 10×16 + 5 = 165."]
+    title: "اختصار Binary مع Octal و Hex",
+    badge: "تريكة سريعة",
+    intro: "لو التحويل مباشر بينهم، متحولش Decimal في النص.",
+    rules: [
+      ["Octal ↔ Binary", "كل رقم Octal = 3 bits. مثال: 46₈ = 100 110₂."],
+      ["Hex ↔ Binary", "كل رقم Hex = 4 bits. مثال: A5₁₆ = 1010 0101₂."],
+      ["لو Binary إلى Octal", "قسم من اليمين مجموعات 3."],
+      ["لو Binary إلى Hex", "قسم من اليمين مجموعات 4."]
     ]
   },
   {
-    title: "من Decimal لأي نظام",
-    intro: "لو طالب منك من decimal إلى binary/octal/hex.",
-    tricks: [
-      ["الطريقة", "اقسم على الأساس وخد البواقي."],
-      ["الأهم", "اقرأ البواقي من تحت لفوق."],
-      ["مثال", "13₁₀ ÷ 2 يعطي البواقي 1,0,1,1؛ من تحت لفوق = 1101₂."]
+    title: "Input / Output / Storage في كلمة",
+    badge: "أجهزة",
+    intro: "اسأل نفسك الجهاز بيدخل، يطلع، ولا يخزن؟",
+    rules: [
+      ["Input", "Keyboard, Mouse, Scanner, Microphone."],
+      ["Output", "Monitor, Printer, Speaker."],
+      ["Storage", "USB flash drive, Hard disk, CD/DVD."],
+      ["Processing", "CPU فقط تقريباً في أسئلة الامتحان."]
     ]
   },
   {
-    title: "Octal و Hex مع Binary",
-    intro: "دي أسرع تريكة لو التحويل بينهم مباشرة.",
-    tricks: [
-      ["Octal", "كل رقم Octal = 3 bits. مثال: 4=100 و 6=110، إذن 46₈ = 100110₂."],
-      ["Hex", "كل رقم Hex = 4 bits. مثال: A=1010 و 5=0101، إذن A5₁₆ = 10100101₂."],
-      ["العكس", "قسم binary مجموعات 3 عشان Octal، ومجموعات 4 عشان Hex."]
+    title: "Hardware ولا Software؟",
+    badge: "فرق مضمون",
+    intro: "السؤال ده بيتحل باللمس.",
+    rules: [
+      ["Hardware", "أي حاجة ملموسة: CPU, motherboard, keyboard, monitor."],
+      ["Software", "برامج وتعليمات: Windows, Word, Photoshop, games."],
+      ["System software", "بيشغل الجهاز أو يصينه: OS, utilities, antivirus."],
+      ["Application software", "المستخدم بيعمل عليه مهمة: writing, browsing, playing."]
     ]
   },
   {
-    title: "احفظ Generations بجملة واحدة",
-    intro: "لو السؤال عن الأجيال، غالباً بييجي direct.",
-    tricks: [
-      ["1st", "Vacuum tubes."],
-      ["2nd", "Transistors."],
-      ["3rd", "Integrated Circuits IC."],
-      ["4th", "Microprocessors."]
+    title: "Operating System",
+    badge: "OS",
+    intro: "لو السؤال فيه تشغيل الجهاز أو إدارة الموارد، غالباً OS.",
+    rules: [
+      ["OS يعمل إيه؟", "Boot, launch apps, manage files, control hardware, security."],
+      ["Multitasking", "أكتر من برنامج مفتوح في نفس الوقت."],
+      ["Virtual memory", "Hard disk space يُستخدم كأنه RAM إضافية."],
+      ["Examples", "Windows, Linux, macOS, Android, iOS."]
     ]
   },
   {
-    title: "Input / Output / Storage",
-    intro: "لو السؤال عن device، اسأل نفسك: يدخل؟ يطلع؟ يخزن؟",
-    tricks: [
-      ["Input", "Keyboard, mouse, scanner, microphone."],
-      ["Output", "Monitor, printer, speaker."],
-      ["Storage", "USB flash drive, hard disk, optical disk."],
-      ["Processing", "CPU."]
-    ]
-  },
-  {
-    title: "System Software ولا Application؟",
-    intro: "فرقهم بكلمة: يشغّل الجهاز ولا يعمل مهمة للمستخدم؟",
-    tricks: [
-      ["System software", "Windows, Linux, macOS, Android, utilities."],
-      ["Application software", "Word, Photoshop, browser, games."],
-      ["تريكة", "لو بيشغل الجهاز أو يحميه أو يصينه = System/Utility. لو المستخدم بيعمل عليه شغل = Application."]
-    ]
-  },
-  {
-    title: "RAM / ROM / Cache",
-    intro: "دول بيتلخبطوا كتير.",
-    tricks: [
-      ["RAM", "Volatile: بتفقد البيانات لما الكهرباء تفصل."],
-      ["ROM", "Non-volatile: مش بتفقد البيانات مع فصل الكهرباء."],
-      ["Cache", "ذاكرة سريعة جداً؛ L1 أسرع من L2 و L3."]
+    title: "RAM / ROM / Cache بدون لخبطه",
+    badge: "Memory",
+    intro: "احفظ الثلاث جمل دول.",
+    rules: [
+      ["RAM", "Volatile: الكهرباء تفصل، البيانات تضيع."],
+      ["ROM", "Non-volatile: الكهرباء تفصل، البيانات تفضل موجودة."],
+      ["Cache", "أسرع ذاكرة قريبة من CPU. L1 أسرع من L2 أسرع من L3."]
     ]
   },
   {
     title: "CPU keywords",
-    intro: "امسك الكلمة المفتاحية في الاختيارات.",
-    tricks: [
-      ["ALU", "Arithmetic/Logic Unit = calculations and logic."],
-      ["CU", "Control Unit = control and coordination."],
+    badge: "Processing",
+    intro: "امسك الكلمة في الاختيار.",
+    rules: [
+      ["ALU", "Arithmetic/Logic Unit = حسابات ومنطق."],
+      ["CU", "Control Unit = تحكم وتنظيم."],
       ["Clock speed", "MHz أو GHz."],
-      ["Word size", "عدد الـ bits اللي CPU يتعامل معها مرة واحدة."]
-    ]
-  },
-  {
-    title: "Logic Gates من غير فلسفة",
-    intro: "احفظ الجمل دي وهتحل أغلب الأسئلة.",
-    tricks: [
-      ["AND", "لازم كل inputs تكون 1 عشان output = 1."],
-      ["OR", "يكفي input واحد = 1 عشان output = 1."],
-      ["NOT", "يعكس: 0 تبقى 1، و1 تبقى 0."],
-      ["Truth table", "كل احتمالات input ومعاها output."]
+      ["Word size", "عدد الـ bits اللي CPU يتعامل معها مرة واحدة."],
+      ["Dual-core", "نواتين processing على chip واحدة."]
     ]
   },
   {
     title: "Machine Cycle",
-    intro: "ترتيبها بيتسأل مباشر.",
-    tricks: [
-      ["الترتيب", "Fetch → Decode → Execute → Store."],
-      ["تريكة حفظ", "هات التعليمة، افهمها، نفذها، خزّن النتيجة."]
+    badge: "ترتيب",
+    intro: "الترتيب بيتسأل زي ما هو.",
+    rules: [
+      ["احفظ", "Fetch → Decode → Execute → Store."],
+      ["بالعربي", "هات التعليمة → افهمها → نفذها → خزّن النتيجة."]
+    ]
+  },
+  {
+    title: "Logic Gates",
+    badge: "منطق",
+    intro: "ثلاث جمل وتحل.",
+    rules: [
+      ["AND", "كل inputs لازم 1 عشان output يبقى 1."],
+      ["OR", "واحد بس 1 يكفي يخلي output = 1."],
+      ["NOT", "يعكس: 0 تبقى 1، و1 تبقى 0."],
+      ["Truth table", "جدول لكل احتمالات input ومع كل احتمال output."]
+    ]
+  },
+  {
+    title: "Computer Generations",
+    badge: "حفظ",
+    intro: "أربعة أسطر غالباً ييجوا مباشر.",
+    rules: [
+      ["1st", "Vacuum tubes."],
+      ["2nd", "Transistors."],
+      ["3rd", "Integrated Circuits ICs."],
+      ["4th", "Microprocessors."]
+    ]
+  },
+  {
+    title: "Types of Computers",
+    badge: "أنواع",
+    intro: "اربط النوع بالاستخدام.",
+    rules: [
+      ["Personal computer", "Desktop أو laptop لشخص واحد."],
+      ["Mobile device", "Smartphone أو tablet."],
+      ["Embedded", "داخل منتج: car, thermostat."],
+      ["Mainframe", "بنوك، جامعات، مؤسسات كبيرة."],
+      ["Supercomputer", "الأسرع والأغلى والأقوى."]
     ]
   },
   {
     title: "Big Data V's",
-    intro: "لو شفت V في السؤال، اختار المعنى المناسب.",
-    tricks: [
+    badge: "مهم",
+    intro: "لو السؤال فيه V، اختار المعنى.",
+    rules: [
       ["Volume", "حجم البيانات."],
       ["Velocity", "سرعة وصول البيانات."],
-      ["Variety", "أنواع وصيغ ومصادر مختلفة."],
-      ["Veracity", "الموثوقية والجودة."],
-      ["Value", "الفائدة والمعنى من البيانات."]
+      ["Variety", "تنوع الأنواع والمصادر."],
+      ["Veracity", "مصداقية وجودة البيانات."],
+      ["Value", "الفائدة من البيانات."]
     ]
   },
   {
-    title: "أنواع البيانات في Big Data",
-    intro: "Structured ولا unstructured ولا semi-structured؟",
-    tricks: [
-      ["Structured", "جداول SQL وبيانات منظمة في rows/columns."],
-      ["Unstructured", "صور، فيديو، صوت، text حر."],
+    title: "Structured ولا Unstructured؟",
+    badge: "Big Data",
+    intro: "لو البيانات في جدول فهي structured غالباً.",
+    rules: [
+      ["Structured", "SQL table, rows, columns."],
+      ["Unstructured", "Video, image, audio, free text."],
       ["Semi-structured", "JSON و XML."]
     ]
   },
   {
-    title: "أنواع الكمبيوتر",
-    intro: "امسك الاستخدام.",
-    tricks: [
-      ["Personal computer", "Desktop/laptop لشخص واحد."],
-      ["Mobile device", "Smartphone/tablet."],
-      ["Embedded", "داخل منتج: car, thermostat."],
-      ["Mainframe", "بنوك وجامعات ومؤسسات كبيرة."],
-      ["Supercomputer", "الأسرع والأقوى والأغلى."]
+    title: "كلمات لو شفتها اختار فوراً",
+    badge: "اختيارات",
+    intro: "دي خريطة إنقاذ سريعة جداً.",
+    rules: [
+      ["Smallest unit", "Bit."],
+      ["8 bits", "Byte."],
+      ["Text coding", "ASCII."],
+      ["Main circuit board", "Motherboard."],
+      ["Data path", "Bus."],
+      ["Atomic/molecular tech", "Nanotechnology."],
+      ["Computing using light", "Optical computer."],
+      ["IoT", "أجهزة لها identity وتتبادل data."]
     ]
   }
 ];
@@ -627,15 +660,30 @@ function renderSheet() {
 }
 
 function renderBasma() {
-  $("#basmaGrid").innerHTML = basmaTricks.map((item) => `
-    <article class="basma-card">
-      <h3>${item.title}</h3>
-      <p>${item.intro}</p>
-      <ul>
-        ${item.tricks.map(([label, text]) => `<li><strong>${label}:</strong> ${text}</li>`).join("")}
-      </ul>
+  $("#basmaGrid").innerHTML = `
+    <article class="basma-card basma-plan">
+      <span class="basma-badge">ابدأ هنا</span>
+      <h3>خطة الطالب الزيرو في الامتحان</h3>
+      <div class="basma-steps">
+        ${basmaPlan.map(([num, text]) => `
+          <div>
+            <strong>${num}</strong>
+            <p>${text}</p>
+          </div>
+        `).join("")}
+      </div>
     </article>
-  `).join("");
+    ${basmaTricks.map((item) => `
+      <article class="basma-card">
+        <span class="basma-badge">${item.badge}</span>
+        <h3>${item.title}</h3>
+        <p>${item.intro}</p>
+        <ul>
+          ${item.rules.map(([label, text]) => `<li><strong>${label}:</strong> ${text}</li>`).join("")}
+        </ul>
+      </article>
+    `).join("")}
+  `;
 }
 
 function reviewCard(type, index) {
