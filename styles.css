@@ -344,6 +344,10 @@ h2 { font-size: 2rem; margin-bottom: 8px; }
   line-height: 1.7;
 }
 
+.review-card .secondary-btn {
+  margin: 6px 6px 0 0;
+}
+
 .review-meta {
   display: flex;
   flex-wrap: wrap;

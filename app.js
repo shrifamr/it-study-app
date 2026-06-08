@@ -364,6 +364,13 @@ function savePracticeState() {
   localStorage.setItem("itFavoriteQuestions", JSON.stringify([...favoriteQuestions]));
 }
 
+function markWrong(type, index, isCorrect) {
+  if (!isCorrect) {
+    wrongQuestions.add(`${type}:${index}`);
+    savePracticeState();
+  }
+}
+
 function updateProgress() {
   $("#progressText").textContent = `${completed.size} من ${lessons.length}`;
   $("#progressBar").style.width = `${(completed.size / lessons.length) * 100}%`;
@@ -484,6 +491,7 @@ function reviewCard(type, index) {
       <h3>${title}</h3>
       <p><strong>الإجابة الصحيحة:</strong> ${correct}</p>
       <p>${q.explanation}</p>
+      <button class="secondary-btn remove-wrong-review" data-key="${key}">اتراجعت خلاص</button>
       <button class="secondary-btn toggle-favorite-review" data-key="${key}">
         ${favoriteQuestions.has(key) ? "إزالة من المفضلة" : "إضافة للمفضلة"}
       </button>
@@ -536,26 +544,14 @@ document.addEventListener("click", (event) => {
   const answer = event.target.closest(".answer-btn");
   if (answer && answer.dataset.answer !== "true" && answer.dataset.answer !== "false") {
     answersState[currentQuestion] = Number(answer.dataset.answer);
-    const key = `mcq:${currentQuestion}`;
-    if (answersState[currentQuestion] === quiz[currentQuestion].correct) {
-      wrongQuestions.delete(key);
-    } else {
-      wrongQuestions.add(key);
-    }
-    savePracticeState();
+    markWrong("mcq", currentQuestion, answersState[currentQuestion] === quiz[currentQuestion].correct);
     renderQuiz();
   }
 
   const tfAnswer = event.target.closest(".tf-answer");
   if (tfAnswer) {
     tfAnswersState[currentTfQuestion] = tfAnswer.dataset.answer === "true";
-    const key = `tf:${currentTfQuestion}`;
-    if (tfAnswersState[currentTfQuestion] === trueFalseQuiz[currentTfQuestion].correct) {
-      wrongQuestions.delete(key);
-    } else {
-      wrongQuestions.add(key);
-    }
-    savePracticeState();
+    markWrong("tf", currentTfQuestion, tfAnswersState[currentTfQuestion] === trueFalseQuiz[currentTfQuestion].correct);
     renderTrueFalse();
   }
 
@@ -580,6 +576,13 @@ document.addEventListener("click", (event) => {
     savePracticeState();
     renderWrongQuestions();
     renderFavorites();
+  }
+
+  const removeWrong = event.target.closest(".remove-wrong-review");
+  if (removeWrong) {
+    wrongQuestions.delete(removeWrong.dataset.key);
+    savePracticeState();
+    renderWrongQuestions();
   }
 
   if (event.target.id === "nextQuestion") {
