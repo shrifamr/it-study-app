@@ -47,11 +47,13 @@ const lessons = [
     title: "Number Systems",
     tag: "Conversions",
     intro: "التحويلات مهمة جداً في Chapter 2: من binary/octal/hex إلى decimal والعكس.",
-    terms: ["1101₂ = 13", "46₈ = 38", "A5₁₆ = 165", "A = 10"],
+    terms: ["Binary = 2", "Octal = 8", "Decimal = 10", "Hex = 16", "A=10 ... F=15"],
     blocks: [
-      ["إلى Decimal", ["Binary: استخدم powers of 2.", "Octal: اضرب كل رقم في power of 8.", "Hex: اضرب كل رقم في power of 16.", "مثال: 1101₂ = 8 + 4 + 1 = 13."]],
-      ["من Decimal", ["إلى binary: اقسم على 2 وخذ البواقي.", "إلى octal: اقسم على 8.", "إلى hex: اقسم على 16.", "اقرأ البواقي من أسفل لأعلى."]],
-      ["أمثلة", ["46₈ = 4×8 + 6 = 38.", "A5₁₆ = 10×16 + 5 = 165.", "11111111₂ = 255."]]
+      ["القاعدة الذهبية", ["أي نظام إلى Decimal: اضرب كل رقم في قوة الأساس واجمع.", "من Decimal لأي نظام: اقسم على الأساس وخذ البواقي، ثم اقرأ البواقي من تحت لفوق."]],
+      ["الأساسات", ["Binary base 2 وأرقامه 0 و 1.", "Octal base 8 وأرقامه من 0 إلى 7.", "Decimal base 10 وأرقامه من 0 إلى 9.", "Hexadecimal base 16 وأرقامه 0 إلى 9 ثم A=10, B=11, C=12, D=13, E=14, F=15."]],
+      ["إلى Decimal", ["Binary: استخدم powers of 2. مثال 1101₂ = 1×8 + 1×4 + 0×2 + 1×1 = 13.", "Octal: استخدم powers of 8. مثال 46₈ = 4×8¹ + 6×8⁰ = 38.", "Hex: استخدم powers of 16. مثال A5₁₆ = 10×16¹ + 5×16⁰ = 165."]],
+      ["من Decimal", ["13₁₀ إلى Binary: 13÷2 باقي 1، 6÷2 باقي 0، 3÷2 باقي 1، 1÷2 باقي 1، النتيجة 1101₂.", "38₁₀ إلى Octal: 38÷8 باقي 6، 4÷8 باقي 4، النتيجة 46₈.", "165₁₀ إلى Hex: 165÷16 باقي 5، 10÷16 باقي 10، و10=A، النتيجة A5₁₆."]],
+      ["اختصارات Binary", ["Octal إلى Binary: كل رقم Octal يتحول إلى 3 bits. مثال 46₈ = 100 110₂.", "Hex إلى Binary: كل رقم Hex يتحول إلى 4 bits. مثال A5₁₆ = 1010 0101₂.", "العكس صحيح: قسم الـ Binary إلى مجموعات 3 للتحويل إلى Octal، أو مجموعات 4 للتحويل إلى Hex."]]
     ]
   },
   {
@@ -117,6 +119,10 @@ const labs = [
   { title: "Binary to Decimal", desc: "تحويل 1101₂ إلى decimal.", steps: ["1×8", "1×4", "0×2", "1×1", "Total = 13"] },
   { title: "Octal to Decimal", desc: "تحويل 46₈.", steps: ["4×8¹ = 32", "6×8⁰ = 6", "32 + 6 = 38"] },
   { title: "Hex to Decimal", desc: "تحويل A5₁₆.", steps: ["A = 10", "10×16 = 160", "5×1 = 5", "Total = 165"] },
+  { title: "Decimal to Binary", desc: "تحويل 13₁₀ إلى binary.", steps: ["13 ÷ 2 = 6 R1", "6 ÷ 2 = 3 R0", "3 ÷ 2 = 1 R1", "1 ÷ 2 = 0 R1", "Read up: 1101₂"] },
+  { title: "Decimal to Octal", desc: "تحويل 38₁₀ إلى octal.", steps: ["38 ÷ 8 = 4 R6", "4 ÷ 8 = 0 R4", "Read up: 46₈"] },
+  { title: "Decimal to Hex", desc: "تحويل 165₁₀ إلى hexadecimal.", steps: ["165 ÷ 16 = 10 R5", "10 ÷ 16 = 0 R10", "10 = A", "Read up: A5₁₆"] },
+  { title: "Octal and Hex shortcuts", desc: "اختصارات التحويل مع binary.", steps: ["46₈: 4=100 and 6=110", "46₈ = 100110₂", "A5₁₆: A=1010 and 5=0101", "A5₁₆ = 10100101₂"] },
   { title: "Machine Cycle", desc: "كل instruction تمر بأربع مراحل أساسية.", steps: ["Fetch", "Decode", "Execute", "Store"] },
   { title: "Big Data Retail", desc: "متجر كبير يجمع transactions وreviews وclicks.", steps: ["Volume: ملايين العمليات", "Velocity: تدفق مستمر", "Variety: structured + text", "Veracity: جودة متفاوتة", "Value: توقع الطلب"] }
 ];
@@ -336,7 +342,7 @@ const sheetItems = [
   ["Chapter 1", ["Computer operations: Input, Processing, Output, Storage, Communications.", "Data خام، Information معالجة.", "Hardware أجزاء مادية، Software برامج.", "First gen vacuum tubes, second transistors, third IC, fourth microprocessor."]],
   ["Devices", ["Keyboard input.", "Monitor output.", "CPU processing.", "USB flash drive storage.", "Smartphone mobile device.", "Thermostat/car system embedded computer."]],
   ["Chapter 2", ["Bit أصغر وحدة.", "Byte = 8 bits.", "Byte max unsigned value = 255.", "ASCII يمثل text.", "Word size = bits handled by CPU at once."]],
-  ["Conversions", ["1101₂ = 13.", "46₈ = 38.", "A5₁₆ = 165.", "A in hex = 10.", "Decimal to base: divide by base."]],
+  ["Conversions", ["إلى Decimal: اضرب كل رقم في قوة الأساس واجمع.", "من Decimal: اقسم على الأساس وخذ البواقي من تحت لفوق.", "1101₂ = 13.", "46₈ = 38.", "A5₁₆ = 165.", "Octal ↔ Binary: كل رقم Octal = 3 bits.", "Hex ↔ Binary: كل رقم Hex = 4 bits."]],
   ["CPU & Memory", ["Motherboard main circuit board.", "ALU calculations.", "CU control.", "L1 cache fastest.", "RAM volatile.", "ROM non-volatile.", "Bus data path."]],
   ["Software", ["System software includes OS and utilities.", "Application software performs specific tasks.", "Utilities: backup, antivirus, compression, uninstall, disk management."]],
   ["Big Data", ["Volume: amount.", "Velocity: speed.", "Variety: data types.", "Veracity: reliability.", "Value: useful insight.", "Sources include IoT, transactions, social media, logs, JSON/XML."]]
