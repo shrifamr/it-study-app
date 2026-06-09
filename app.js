@@ -560,6 +560,8 @@ let activeLesson = 0;
 let completed = new Set(JSON.parse(localStorage.getItem("itCompletedLessons") || "[]"));
 let currentQuestion = 0;
 let answersState = Array(quiz.length).fill(null);
+let currentDeepQuestion = 0;
+let deepAnswersState = Array(deepQuiz.length).fill(null);
 let currentTfQuestion = 0;
 let tfAnswersState = Array(trueFalseQuiz.length).fill(null);
 let wrongQuestions = new Set(JSON.parse(localStorage.getItem("itWrongQuestions") || "[]"));
@@ -570,6 +572,7 @@ const $ = (selector) => document.querySelector(selector);
 function renderStats() {
   $("#lessonCount").textContent = lessons.length;
   $("#questionCount").textContent = quiz.length;
+  $("#deepQuestionCount").textContent = deepQuiz.length;
   $("#tfCount").textContent = trueFalseQuiz.length;
 }
 
@@ -648,6 +651,30 @@ function renderQuiz() {
   const solved = answersState.filter((answer) => answer !== null);
   const correct = solved.filter((answer, index) => answer === quiz[index].correct).length;
   $("#scoreText").textContent = `${correct} / ${solved.length}`;
+}
+
+function renderDeepQuiz() {
+  const q = deepQuiz[currentDeepQuestion];
+  $("#deepQuestionNumber").textContent = `سؤال ${currentDeepQuestion + 1} من ${deepQuiz.length}`;
+  $("#deepQuizTopic").textContent = q.topic;
+  $("#deepQuestionText").textContent = q.question;
+  $("#deepAnswers").innerHTML = q.answers.map((answer, index) => {
+    const selected = deepAnswersState[currentDeepQuestion];
+    const cls = selected === null ? "" : index === q.correct ? "correct" : selected === index ? "wrong" : "";
+    return `<button class="answer-btn ${cls}" data-deep-answer="${index}">${String.fromCharCode(97 + index)}) ${answer}</button>`;
+  }).join("");
+
+  const feedback = $("#deepFeedback");
+  if (deepAnswersState[currentDeepQuestion] === null) {
+    feedback.classList.add("hidden");
+  } else {
+    feedback.classList.remove("hidden");
+    feedback.textContent = q.explanation;
+  }
+
+  const solved = deepAnswersState.filter((answer) => answer !== null);
+  const correct = solved.filter((answer, index) => answer === deepQuiz[index].correct).length;
+  $("#deepScoreText").textContent = `${correct} / ${solved.length}`;
 }
 
 function renderTrueFalse() {
@@ -825,6 +852,7 @@ document.addEventListener("click", (event) => {
     if (nav.dataset.view === "favorites") renderFavorites();
     if (nav.dataset.view === "basma") renderBasma();
     if (nav.dataset.view === "chapters") renderChapterPractice();
+    if (nav.dataset.view === "deepQuiz") renderDeepQuiz();
   }
 
   const chapterButton = event.target.closest(".chapter-tab");
@@ -853,10 +881,16 @@ document.addEventListener("click", (event) => {
   }
 
   const answer = event.target.closest(".answer-btn");
-  if (answer && answer.dataset.answer !== "true" && answer.dataset.answer !== "false") {
+  if (answer && answer.dataset.answer !== undefined && answer.dataset.answer !== "true" && answer.dataset.answer !== "false") {
     answersState[currentQuestion] = Number(answer.dataset.answer);
     markWrong("mcq", currentQuestion, answersState[currentQuestion] === quiz[currentQuestion].correct);
     renderQuiz();
+  }
+
+  const deepAnswer = event.target.closest(".answer-btn[data-deep-answer]");
+  if (deepAnswer) {
+    deepAnswersState[currentDeepQuestion] = Number(deepAnswer.dataset.deepAnswer);
+    renderDeepQuiz();
   }
 
   const tfAnswer = event.target.closest(".tf-answer");
@@ -906,6 +940,16 @@ document.addEventListener("click", (event) => {
     renderQuiz();
   }
 
+  if (event.target.id === "nextDeepQuestion") {
+    currentDeepQuestion = Math.min(deepQuiz.length - 1, currentDeepQuestion + 1);
+    renderDeepQuiz();
+  }
+
+  if (event.target.id === "prevDeepQuestion") {
+    currentDeepQuestion = Math.max(0, currentDeepQuestion - 1);
+    renderDeepQuiz();
+  }
+
   if (event.target.id === "nextTfQuestion") {
     currentTfQuestion = Math.min(trueFalseQuiz.length - 1, currentTfQuestion + 1);
     renderTrueFalse();
@@ -935,6 +979,7 @@ renderStats();
 renderLessons();
 renderLabs();
 renderQuiz();
+renderDeepQuiz();
 renderTrueFalse();
 renderWrongQuestions();
 renderFavorites();

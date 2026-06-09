@@ -185,7 +185,7 @@ h2 { font-size: 2rem; margin-bottom: 8px; }
 
 .quick-stats {
   display: grid;
-  grid-template-columns: repeat(3, 92px);
+  grid-template-columns: repeat(4, 92px);
   gap: 10px;
 }
 
@@ -201,6 +201,17 @@ h2 { font-size: 2rem; margin-bottom: 8px; }
 
 .quick-stats strong { color: var(--blue); font-size: 1.55rem; }
 .quick-stats span { color: var(--muted); font-size: .85rem; }
+
+.deep-note {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border: 1px solid #d6e6e0;
+  border-radius: 8px;
+  background: #e8f4ef;
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1.7;
+}
 
 .view { display: none; }
 .view.active { display: block; }
@@ -584,7 +595,7 @@ h2 { font-size: 2rem; margin-bottom: 8px; }
   .sidebar { position: relative; height: auto; gap: 18px; }
   .nav { grid-template-columns: repeat(4, minmax(110px, 1fr)); }
   .topbar, .quiz-header { align-items: start; flex-direction: column; }
-  .quick-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quick-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
   .lesson-layout, .lab-grid, .sheet-grid, .review-grid, .basma-grid, .chapter-grid { grid-template-columns: 1fr; }
   .basma-steps { grid-template-columns: 1fr; }
   .lesson-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }

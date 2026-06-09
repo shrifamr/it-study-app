@@ -28,6 +28,7 @@
           <button class="nav-item active" data-view="lessons">الدروس</button>
           <button class="nav-item" data-view="lab">أمثلة سريعة</button>
           <button class="nav-item" data-view="quiz">MCQ</button>
+          <button class="nav-item" data-view="deepQuiz">الفهم العميق</button>
           <button class="nav-item" data-view="trueFalse">صح/غلط</button>
           <button class="nav-item" data-view="wrong">الغلط</button>
           <button class="nav-item" data-view="favorites">المفضلة</button>
@@ -52,6 +53,7 @@
           <div class="quick-stats">
             <div><strong id="lessonCount">0</strong><span>دروس</span></div>
             <div><strong id="questionCount">0</strong><span>MCQ</span></div>
+            <div><strong id="deepQuestionCount">0</strong><span>فهم عميق</span></div>
             <div><strong id="tfCount">0</strong><span>صح/غلط</span></div>
           </div>
         </section>
@@ -100,6 +102,34 @@
                 <button id="favoriteQuestion" class="secondary-btn">إضافة للمفضلة</button>
                 <button id="prevQuestion" class="secondary-btn">السابق</button>
                 <button id="nextQuestion" class="primary-btn">التالي</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="deepQuiz">
+          <div class="quiz-shell">
+            <div class="quiz-header">
+              <div>
+                <p class="eyebrow">Deep Understanding</p>
+                <h2>اختبار الفهم العميق جدًا</h2>
+              </div>
+              <div class="score-pill"><span id="deepScoreText">0 / 0</span></div>
+            </div>
+            <div class="deep-note">
+              الأسئلة هنا معمولة على طريقة الفهم: مواقف، فخاخ، مقارنة بين اختيارات قريبة، وتطبيق على أمثلة.
+            </div>
+            <div class="quiz-card">
+              <div class="quiz-meta">
+                <span id="deepQuestionNumber"></span>
+                <span id="deepQuizTopic"></span>
+              </div>
+              <h3 id="deepQuestionText"></h3>
+              <div id="deepAnswers" class="answers"></div>
+              <div id="deepFeedback" class="feedback hidden"></div>
+              <div class="quiz-actions">
+                <button id="prevDeepQuestion" class="secondary-btn">السابق</button>
+                <button id="nextDeepQuestion" class="primary-btn">التالي</button>
               </div>
             </div>
           </div>
@@ -188,6 +218,7 @@
       </main>
     </div>
 
+    <script src="deep-quiz.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
