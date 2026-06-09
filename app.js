@@ -234,6 +234,7 @@ const extraQuiz = [
 ].map(([topic, question, answers, correct, explanation]) => ({ topic, question, answers, correct, explanation }));
 
 quiz.push(...extraQuiz);
+rebalanceChoices(quiz, 1);
 
 const trueFalseQuiz = [
   ["Basics","A computer is programmable and electronic.",true,"الكمبيوتر جهاز إلكتروني قابل للبرمجة."],
@@ -570,6 +571,48 @@ let wrongQuestions = new Set(JSON.parse(localStorage.getItem("itWrongQuestions")
 let favoriteQuestions = new Set(JSON.parse(localStorage.getItem("itFavoriteQuestions") || "[]"));
 
 const $ = (selector) => document.querySelector(selector);
+
+function rebalanceChoices(questions, offset = 0) {
+  const targetPositions = [1, 3, 0, 2];
+  const lengthFillers = [
+    "in this exact case",
+    "based only on the wording given",
+    "under the condition in the question",
+    "as the complete explanation here"
+  ];
+
+  questions.forEach((question, questionIndex) => {
+    if (question.answers.length !== 4) return;
+    const target = targetPositions[(questionIndex + offset) % targetPositions.length];
+    const correctAnswer = question.answers[question.correct];
+    const wrongAnswers = question.answers.filter((_, index) => index !== question.correct);
+    const balancedAnswers = Array(4);
+    balancedAnswers[target] = correctAnswer;
+
+    let wrongIndex = 0;
+    for (let index = 0; index < balancedAnswers.length; index++) {
+      if (index !== target) {
+        balancedAnswers[index] = wrongAnswers[wrongIndex];
+        wrongIndex += 1;
+      }
+    }
+
+    question.answers = balancedAnswers;
+    question.correct = target;
+
+    const lengths = question.answers.map((answer) => answer.length);
+    const correctLength = lengths[question.correct];
+    const longestWrong = Math.max(...lengths.filter((_, index) => index !== question.correct));
+    if (correctLength > longestWrong + 6) {
+      const wrongTargets = lengths
+        .map((length, index) => ({ length, index }))
+        .filter((item) => item.index !== question.correct)
+        .sort((a, b) => a.length - b.length);
+      const filler = lengthFillers[questionIndex % lengthFillers.length];
+      question.answers[wrongTargets[0].index] = `${question.answers[wrongTargets[0].index]} ${filler}`;
+    }
+  });
+}
 
 function renderStats() {
   $("#lessonCount").textContent = lessons.length;
