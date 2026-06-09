@@ -532,27 +532,27 @@ const basmaTricks = [
 const chapterPractice = [
   {
     id: "chapter1",
-    title: "Chapter 1",
-    subtitle: "Computer basics, hardware/software, generations, types, Big Data intro.",
-    source: () => quiz.filter((q, index) => q.topic === "Ch1" && index < 25)
+    title: "Lec 1",
+    subtitle: "Computer basics, users, generations, hardware/software, computer types, Big Data intro, and IoT.",
+    source: () => deepQuiz.filter((q) => q.topic.startsWith("Lec1 -"))
   },
   {
     id: "chapter2",
-    title: "Chapter 2",
-    subtitle: "Data representation, number systems, CPU, memory, logic, machine cycle.",
-    source: () => quiz.filter((q, index) => q.topic === "Ch2" && index < 50)
+    title: "Lec 2",
+    subtitle: "Data representation, ASCII/Unicode, number systems, decimal/base conversion, and logic circuits.",
+    source: () => deepQuiz.filter((q) => q.topic.startsWith("Lec2 -"))
   },
   {
     id: "chapter3",
     title: "Chapter 3",
-    subtitle: "System software, operating systems, utilities, application software.",
-    source: () => quiz.filter((q) => ["OS", "Utilities", "Software"].includes(q.topic))
+    subtitle: "System software, operating systems, processing techniques, utilities, ownership rights, and software delivery.",
+    source: () => deepQuiz.filter((q) => q.topic.startsWith("Chapter 3 -"))
   },
   {
     id: "bigdata",
     title: "Big Data",
-    subtitle: "Five V's, sources, analytics process, structured and unstructured data.",
-    source: () => quiz.filter((q) => q.topic === "Big Data")
+    subtitle: "5 V's, retail and finance examples, data sources, analytics process, and analytics types.",
+    source: () => deepQuiz.filter((q) => q.topic === "Big Data" || q.topic === "Lec1 - Big Data & IoT")
   }
 ];
 
