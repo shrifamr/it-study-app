@@ -1,164 +1,173 @@
 const deepQuizBank = [
-  ["Foundations","A pharmacy system receives medicine names, quantities, and expiry dates, then prints a shortage report. Which statement best describes the report?",["Raw data because it came from input","Information because the raw data was processed into meaning","Hardware because it was printed","Software because it appears on screen"],1,"البيانات الخام بعد الفرز والحساب والتحويل لمعنى تصبح information."],
-  ["Foundations","A student says: 'A computer is smart because it understands everything by itself.' What is the best correction?",["It only follows programs and operations on data","It is smart only if it has Internet","It understands human meaning without instructions","It does not need input"],0,"الكمبيوتر programmable؛ قوته في تنفيذ تعليمات وبرامج وليس الفهم الذاتي."],
-  ["Foundations","If a device accepts input, processes it, stores results, and can communicate, but has no printer, is it still a computer?",["No, printing is required","Yes, output can be screen/sound/data not only printing","No, communication replaces processing","Only if it is a laptop"],1,"Output مفهوم أوسع من printing، والطباعة ليست شرطاً."],
-  ["Foundations","Why is 'end user' different from 'programmer' in exam questions?",["End user writes the operating system","End user uses results; programmer creates software/instructions","They are identical terms","Programmer only repairs hardware"],1,"الفرق في الدور: المستخدم يستفيد من النظام، والمبرمج يبني البرامج."],
-  ["Foundations","A temperature value 37.8 before any calculation is best called:",["Information","Data","System software","Output device"],1,"الرقم وحده raw fact، يصبح information عند تفسيره أو استخدامه."],
-  ["Foundations","Which answer shows the deepest reason computers are used in industry?",["They are fashionable","They automate repeated work, reduce errors, store data, and support decisions","They only replace paper","They only run games"],1,"الفهم الحقيقي: سرعة + دقة + تخزين + قرارات."],
-  ["Foundations","A barcode scanner in a supermarket mainly supports which basic operation first?",["Input","Processing","Storage","Communication"],0,"قراءة الباركود إدخال بيانات للنظام."],
-  ["Foundations","When a payroll system calculates salaries from attendance records, the calculation step is:",["Input","Processing","Output only","Communication"],1,"تحويل الحضور لراتب هو processing."],
-  ["Foundations","A dashboard showing sales trends from thousands of transactions is:",["Unprocessed data","Information that supports decisions","Only hardware","A coding system"],1,"Dashboard يلخص بيانات كثيرة إلى معنى قابل للاستخدام."],
-  ["Foundations","If two answers are 'data' and 'information', choose 'information' when:",["The value is raw and isolated","There is processing, summary, or meaning","It is stored on a flash drive","It is typed by keyboard"],1,"علامة information: معنى أو تلخيص أو قرار بعد معالجة."],
+  ["Lec1 - Computer Basics","A device accepts sales numbers, processes totals, stores the report, and sends it to another branch. Which basic operations are clearly present?",["Input, processing, storage, communications","Output only, because there is a report","Storage only, because the report is saved","Input only, because sales numbers are entered"],0,"من Lec1: العمليات الأساسية هي input, processing, output, storage, communications. هنا واضح الإدخال والمعالجة والتخزين والاتصال."],
+  ["Lec1 - Computer Basics","If a student says information and data are identical, what is the best correction from the lecture?",["Data is raw facts; information is processed into meaningful form","Information is always less useful than data","Data exists only as text, while information is always video","Data is output only, while information is input only"],0,"المحاضرة فرقت بينهم: Data حقائق خام، Information بيانات تم معالجتها لمعنى."],
+  ["Lec1 - Computer Basics","Why is computer literacy considered essential in the course objectives?",["Because computers are integrated into business and personal life","Because every user must become a programmer","Because computers only matter in factories","Because literacy means repairing the motherboard"],0,"Lec1 تبدأ بسؤال why learn computers: لأنها داخلة في الحياة الشخصية والعمل."],
+  ["Lec1 - Computer Basics","A user reads news, exchanges email, and searches information. In Lec1, this mainly supports which idea?",["Computers in your life","Computer generations only","Logic gates inside CPU","Software ownership rights"],0,"هذه أمثلة مباشرة على استخدام الكمبيوتر في الحياة اليومية."],
+  ["Lec1 - Computer Basics","What makes a computer programmable rather than just an electric machine?",["It follows programs that determine tasks","It always connects to the Internet","It contains a printer","It has a screen only"],0,"تعريف الكمبيوتر: programmable electronic device يتبع instructions تسمى programs."],
+  ["Lec1 - Computer Basics","A report generated from raw survey answers is best classified as:",["Information","Raw data only","Hardware","A program"],0,"بعد معالجة الإجابات الخام وإخراج تقرير مفهوم تصبح information."],
+  ["Lec1 - Computer Basics","Which role writes the programs used by computers?",["Programmer","End user","Security specialist","Computer operations personnel"],0,"Lec1: programmers write programs computers use."],
+  ["Lec1 - Computer Basics","Which professional role is closest to protecting computers and networks against hackers?",["Security specialist","Systems analyst","End user","Portable computer"],0,"المحاضرة ذكرت security specialists لتأمين computers and networks."],
+  ["Lec1 - Computer Basics","If someone only uses a computer to obtain information, the lecture calls this person:",["End user","Programmer","System analyst","Mainframe operator"],0,"Computer users أو end users هم من يستخدمون الكمبيوتر للحصول على information."],
+  ["Lec1 - Computer Basics","A systems analyst is mainly connected with:",["Designing computer systems","Writing every user document","Replacing all hardware devices","Only exchanging email"],0,"Lec1: systems analysts design computer systems."],
 
-  ["Hardware","A printer stops working but the spreadsheet program opens normally. Which category is most likely affected?",["Application software","Output hardware","CPU arithmetic unit","Coding system"],1,"الطابعة جهاز output، والبرنامج ما زال يعمل."],
-  ["Hardware","A microphone and scanner are grouped together because both:",["Display results","Enter data into the computer","Store files permanently","Control the CPU"],1,"كلاهما input devices."],
-  ["Hardware","A monitor and speaker are different forms of:",["Input","Output","Processing","Main memory"],1,"الشاشة output بصري والسماعة output صوتي."],
-  ["Hardware","A computer can run but cannot save files after restart because the storage drive is damaged. Which distinction matters?",["RAM is temporary, storage is long-term","Monitor is faster than CPU","Input is the same as output","Software is physical"],0,"الملفات تحتاج storage غير متطاير، وليس RAM فقط."],
-  ["Hardware","A motherboard question asks for 'main circuit board'. Which option should you trust?",["CPU","Motherboard","RAM only","USB"],1,"Motherboard هي اللوحة الرئيسية التي تربط المكونات."],
-  ["Hardware","If a question says 'brain of the computer' but options include CPU and monitor, choose:",["Monitor","CPU","Printer","Keyboard"],1,"CPU يقوم بالمعالجة والتحكم."],
-  ["Hardware","Why is a modem not classified mainly as storage?",["It sends/receives data for communication","It stores pictures","It prints reports","It performs only subtraction"],0,"وظيفته الأساسية communication."],
-  ["Hardware","A hard disk and USB flash are similar because both:",["Are volatile","Keep data after power off","Are input only","Are logic gates"],1,"كلاهما non-volatile storage."],
-  ["Hardware","If the exam says 'physical parts you can touch', the safest answer is:",["Software","Hardware","Data","Algorithm"],1,"Hardware هو الجانب المادي."],
-  ["Hardware","A touchscreen is tricky because it can be:",["Input only forever","Output only forever","Both input and output","Neither input nor output"],2,"يعرض معلومات ويستقبل لمس المستخدم."],
+  ["Lec1 - Generations","A huge computer uses vacuum tubes, consumes much electricity, and generates heat. Which generation is it?",["First generation","Second generation","Third generation","Fourth generation"],0,"First-generation computers 1946-1957 were enormous and powered by vacuum tubes."],
+  ["Lec1 - Generations","Which change best identifies second-generation computers?",["Transistors replacing vacuum tubes","Integrated circuits introducing keyboards","Microprocessors creating microcomputers","AI, voice, and gesture becoming mature"],0,"Second generation used transistors and became smaller, cheaper, more reliable."],
+  ["Lec1 - Generations","A question mentions integrated circuits plus keyboards and monitors. Which generation is being tested?",["Third generation","First generation","Second generation","Fifth generation"],0,"Third-generation computers used ICs and introduced keyboards and monitors."],
+  ["Lec1 - Generations","IBM PC and Apple Macintosh appearing in the early 1980s point to:",["Fourth generation","First generation","Second generation","Third generation"],0,"Fourth generation includes invention of microcomputers in early 80s, IBM PC and Apple Macintosh."],
+  ["Lec1 - Generations","Microprocessors, magnetic disks, flash memory, optical disks, networks, wireless, and Internet belong mostly to:",["Fourth generation","First generation","Second generation","Precomputers"],0,"هذه صفات fourth-generation computers من Lec1."],
+  ["Lec1 - Generations","The fifth generation is described in the lecture as:",["An infancy stage with no precise classification","The generation of punch cards only","The period of transistor-only machines","The same as first generation"],0,"Lec1: fifth generation is now/future, infancy stage, no precise classification."],
+  ["Lec1 - Generations","AI, voice, gesture, optical computers, and nanotechnology are clues for:",["Fifth generation","Second generation","Third generation","Mechanical calculators"],0,"المحاضرة ربطت الجيل الخامس بهذه التقنيات."],
+  ["Lec1 - Generations","Before 1946, which examples are considered precomputers or early computers?",["Abacus, slide rule, mechanical calculator, punch card tabulating machine","Microprocessors and wireless networks only","Android and iOS only","Cloudware and SaaS only"],0,"Lec1 ذكرت هذه الأمثلة في precomputers and early computers."],
 
-  ["Software","A student installs Windows so the laptop can manage files, memory, and applications. Windows here is:",["Application software","System software / operating system","Freeware only","Input device"],1,"OS يدير موارد الجهاز ويشغل التطبيقات."],
-  ["Software","Microsoft Word is not system software because it:",["Performs a user task rather than managing the whole computer","Controls booting","Allocates CPU to all processes","Is physical hardware"],0,"Word تطبيق لمهمة محددة."],
-  ["Software","Antivirus, backup, and compression tools are grouped as:",["Utility programs","Operating systems only","Programming languages","Output devices"],0,"Utilities تساعد في الصيانة والحماية والإدارة."],
-  ["Software","If software is free to use but source code is not available, it is most likely:",["Open source","Freeware","Hardware","Firmware only"],1,"Freeware مجاني، لكن ليس بالضرورة مفتوح المصدر."],
-  ["Software","If the question focuses on 'source code can be viewed and modified', choose:",["Freeware","Open source","Shareware only","Commercial only"],1,"الكلمة المفتاحية source code تشير إلى open source."],
-  ["Software","A browser-based exam system mainly represents:",["Web-based software","Only installed software","ROM","Output hardware"],0,"يعمل عبر browser/Internet."],
-  ["Software","Why can an application fail even when hardware is healthy?",["Software bugs or compatibility issues can stop the task","Hardware always controls content","RAM cannot run programs","Data cannot be processed"],0,"المشكلة قد تكون برمجية رغم سلامة الجهاز."],
-  ["Software","An OS is closer to a manager than a worker because it:",["Coordinates resources and lets applications run","Writes essays by itself","Stores only photos","Prints without hardware"],0,"نظام التشغيل يدير الذاكرة والمعالج والملفات والأجهزة."],
-  ["Software","A file compression tool is useful before emailing a large folder because it:",["Reduces size","Increases CPU cores","Changes monitor type","Makes data volatile"],0,"Compression يقلل الحجم لتسهيل النقل."],
-  ["Software","If the answer choices include system software and application software, choose application when the program:",["Solves a specific user task","Boots the machine","Controls memory for all apps","Manages hardware drivers only"],0,"التطبيق يخدم مهمة للمستخدم."],
+  ["Lec1 - Hardware","A scanner, camera, microphone, joystick, touch pad, and fingerprint reader belong to:",["Input devices","Output devices","Processing devices","Storage media"],0,"Lec1: input devices are used to input data into the computer."],
+  ["Lec1 - Hardware","A projector and speakers are grouped together because they:",["Present results to the user","Store data for future use","Control computer operation","Represent text in ASCII"],0,"Output devices present results: monitors, printers, speakers, projectors."],
+  ["Lec1 - Hardware","Central processing unit and memory are listed under which operation hardware?",["Processing devices","Communications devices","Output devices","Storage devices"],0,"Processing devices perform calculations and control operation: CPU and memory."],
+  ["Lec1 - Hardware","A hard drive, CD/DVD disc, and USB flash drive are examples of:",["Storage devices","Input devices","Output devices","Network adapters"],0,"Storage devices store data on or access data from storage media."],
+  ["Lec1 - Hardware","Modems and network adapters mainly support:",["Communications","Processing","Text representation","Software licensing"],0,"Communications devices allow users to communicate and access remote information."],
+  ["Lec1 - Hardware","Hardware located outside the system unit and connected wired or wirelessly is:",["External hardware","Internal hardware","Application software","Operating system"],0,"Lec1 يفرق بين internal hardware داخل system unit وexternal hardware خارجها."],
+  ["Lec1 - Hardware","The motherboard is best understood from Lec1 as:",["A major internal hardware part inside the box","A mobile operating system","A type of freeware","A web-based application"],0,"المحاضرة عرضت motherboard داخل 'The Box' كجزء مادي داخلي."],
+  ["Lec1 - Hardware","The term hardware refers to:",["Physical parts of a computer","Instructions that tell hardware what to do","Processed meaningful data","Ownership rights of software"],0,"Hardware: physical parts of a computer."],
 
-  ["Operating Systems","During startup, loading the operating system into memory is called:",["Booting","Printing","Formatting text","Fetching only"],0,"Boot process هو بدء الجهاز وتحميل النظام."],
-  ["Operating Systems","A phone running many apps at the same time demonstrates:",["Multitasking","Single-user hardware","ROM only","File compression"],0,"تشغيل أكثر من مهمة في نفس الوقت multitasking."],
-  ["Operating Systems","Virtual memory is useful when:",["RAM is not enough, so storage is used temporarily","The monitor is too small","The keyboard is missing","The CPU becomes a printer"],0,"Virtual memory يستخدم جزء من التخزين كامتداد للRAM."],
-  ["Operating Systems","Why is virtual memory slower than real RAM?",["Storage access is slower than RAM access","It has more colors","It is an input device","It is printed"],0,"التخزين أبطأ من RAM."],
-  ["Operating Systems","Multiprocessing is not the same as multitasking because multiprocessing focuses on:",["More than one processor/core","More than one open file only","More than one user password","More than one monitor"],0,"Multiprocessing يتعلق بعدد المعالجات/الأنوية."],
-  ["Operating Systems","A multiuser OS matters for a university server because:",["Many users can use resources/accounts","Only one game runs","It removes storage","It changes binary to decimal"],0,"Multiuser يسمح لأكثر من مستخدم."],
-  ["Operating Systems","If an OS schedules which program gets CPU time, it is managing:",["Processor resources","Only output colors","Only source code","Only paper size"],0,"توزيع وقت المعالج وظيفة أساسية للنظام."],
-  ["Operating Systems","If an OS organizes folders, permissions, and filenames, it is managing:",["Files","Floating-point arithmetic only","Logic gate design","Optical light"],0,"File management من وظائف OS."],
-  ["Operating Systems","Android and iOS are usually classified as:",["Mobile operating systems","Desktop printers","Storage devices","Truth tables"],0,"أنظمة تشغيل للموبايل."],
-  ["Operating Systems","If the question says UNIX is multiuser and multitasking, the key idea is:",["It can support many users and tasks","It is only a keyboard","It cannot run programs","It is a type of byte"],0,"UNIX مشهور بدعم أكثر من مستخدم ومهام متعددة."],
+  ["Lec1 - Software","Software in Lec1 is best defined as:",["Programs or instructions used to tell hardware what to do","Only the physical parts of the computer","Raw unorganized facts","Any device outside the system unit"],0,"Software refers to programs or instructions used to tell computer hardware what to do."],
+  ["Lec1 - Software","The operating system belongs to:",["System software","Application software only","External hardware","Storage media"],0,"Lec1: the main system software is the operating system."],
+  ["Lec1 - Software","Windows, OS X, Linux, Android, and iOS are examples of:",["Operating systems","Input devices","Storage devices","Software licenses"],0,"المحاضرة ذكرتهم كoperating systems."],
+  ["Lec1 - Software","Writing letters, preparing budgets, managing inventory, playing games, watching videos, and browsing web pages are examples of:",["Application software tasks","Boot process tasks only","Hardware configuration tasks","Mainframe categories"],0,"Lec1: application software enables users to perform specific tasks."],
+  ["Lec1 - Software","If software must be downloaded or bought on CD/DVD and installed before use, the lecture is discussing:",["Traditional software acquisition/use","Only cloudware","Only public domain software","Only operating system security"],0,"Lec1 says software is traditionally purchased on CD/DVD or downloaded and needs installation."],
 
-  ["Data Representation","Why must a computer use coding systems?",["It internally represents data and instructions as binary patterns","Because humans cannot read screens","Because printers require ink","Because software is physical"],0,"الكمبيوتر يتعامل داخلياً مع bits، لذلك نحتاج encoding."],
-  ["Data Representation","If a question asks for the smallest unit that stores 0 or 1, choose:",["Byte","Bit","Word","Kilobyte"],1,"Bit هو 0 أو 1."],
-  ["Data Representation","A byte can store 256 patterns because:",["8 bits give 2^8 combinations","8 bits give 8 combinations","It is always decimal","It is a monitor unit"],0,"2^8 = 256 احتمالات من 0 إلى 255."],
-  ["Data Representation","ASCII is the best answer when the question focuses on representing:",["Text characters","CPU speed","Hard disk size","Screen brightness"],0,"ASCII coding system للحروف والرموز النصية."],
-  ["Data Representation","Unicode is needed more than ASCII when:",["Many languages and symbols must be represented","Only one English digit is stored","The CPU is removed","The printer is unplugged"],0,"Unicode يدعم نطاقاً أكبر من اللغات والرموز."],
-  ["Data Representation","Word size affects performance because it describes:",["How many bits CPU handles at one time","How many words in an essay","How bright the screen is","How large a keyboard is"],0,"Word size عدد bits التي يعالجها المعالج دفعة واحدة."],
-  ["Data Representation","If a byte is all ones 11111111, its decimal value is:",["127","255","256","8"],1,"128+64+32+16+8+4+2+1 = 255."],
-  ["Data Representation","A binary pattern may represent a number or a letter depending on:",["The coding system/context","The keyboard color","The printer brand","The table border"],0,"نفس bits يمكن تفسيرها حسب encoding/context."],
-  ["Data Representation","Why is 'bit' not enough to represent many characters alone?",["One bit has only two states","It is too heavy","It is hardware only","It cannot be stored"],0,"bit واحد يعطي احتمالين فقط."],
-  ["Data Representation","When options include bit, byte, and word, choose word if the question says:",["CPU handles at one time","Smallest 0/1 unit","Eight bits","A printed paragraph"],0,"كلمة 'CPU handles at one time' تشير إلى word size."],
+  ["Lec1 - Computer Types","A computer embedded into a thermostat or car and designed for that product is:",["Embedded computer","Mainframe computer","Supercomputer","Desktop PC"],0,"Embedded computer is built into a product and performs specific tasks for that product."],
+  ["Lec1 - Computer Types","Why is an embedded computer not a general-purpose computer?",["It is designed for specific product tasks","It is always the most expensive computer","It has no electronic parts","It must run many users' bank records"],0,"Lec1: embedded computers cannot be used as general-purpose computers."],
+  ["Lec1 - Computer Types","Smartphones, handheld gaming devices, and portable digital media players fit best under:",["Mobile devices","Mainframes","Midrange servers","Thin clients only"],0,"Mobile devices are very small devices with built-in computing or Internet capability."],
+  ["Lec1 - Computer Types","A small computer designed to be used by one person at a time is a:",["Personal computer","Mainframe","Supercomputer","Enterprise server"],0,"Personal computer: small computer designed for one person at a time."],
+  ["Lec1 - Computer Types","A tablet computer differs from a notebook mainly because it is designed to be used with:",["Digital pen or touch input","Punch cards only","Climate-controlled data centers","No screen"],0,"Tablet computer is designed for digital pen or touch input."],
+  ["Lec1 - Computer Types","A netbook is primarily designed to:",["Access Internet applications and resources","Run one scientific program as fast as possible","Manage centralized bank data","Control a thermostat"],0,"Lec1: netbook is small notebook primarily for Internet applications/resources."],
+  ["Lec1 - Computer Types","A thin client cannot function as a computer if:",["The network is down","The monitor is large","It has a keyboard","The user opens email"],0,"Thin client depends on network for processing and storage."],
+  ["Lec1 - Computer Types","A midrange server is used mainly to:",["Host programs and data for a small network","Run one program fastest possible","Be embedded into home appliances","Represent text using Unicode"],0,"Midrange server: medium-sized computer to host programs/data for a small network."],
+  ["Lec1 - Computer Types","A large bank needing centralized data, 24-hour operation, and climate-controlled data centers likely uses:",["Mainframe computer","Tablet computer","Embedded computer","Netbook"],0,"Mainframes are powerful computers for large organizations and centralized data."],
+  ["Lec1 - Computer Types","The fastest, most expensive, most powerful type, often built as a cluster, is:",["Supercomputer","Thin client","Mobile phone","Internet appliance"],0,"Supercomputer: fastest, most expensive, most powerful; may be supercomputing cluster."],
+  ["Lec1 - Computer Types","Space exploration, missile guidance, weather forecast, oil exploration, and scientific research point to:",["Supercomputers","Embedded computers","Desktop cases","Search tools"],0,"هذه استخدامات supercomputers في Lec1."],
+  ["Lec1 - Computer Types","A refrigerator with built-in Internet access could be an example of:",["Internet appliance","Supercomputer","Public domain software","ASCII code"],0,"Internet appliances can be built into another product such as a refrigerator."],
 
-  ["Number Systems","To convert octal 46 to decimal, the logic is:",["4×8 + 6","4×6 + 8","46×8","6×8 + 4×8"],0,"في رقم من خانتين octal: الشمال ×8 ثم اجمع اليمين."],
-  ["Number Systems","Why is 49 not a valid octal number?",["Octal digits can only be 0 to 7","It is too large","It has two digits","It is decimal only"],0,"النظام الثماني لا يحتوي الرقم 8 أو 9."],
-  ["Number Systems","Binary 1010 equals decimal 10 because:",["8+2","4+2","10 is copied directly","1+0+1+0"],0,"الخانات من اليمين: 1,2,4,8؛ إذن 8+2."],
-  ["Number Systems","Decimal 38 becomes octal 46 because:",["38÷8 gives quotient 4 remainder 6, read 46","38×8=304","4+6=10","38 is already octal"],0,"التحويل من decimal لbase: اقسم وخد البواقي من الآخر للأول."],
-  ["Number Systems","Hex A5 equals decimal 165 because:",["10×16 + 5","A×5 only","10+5","16×5"],0,"A=10 في hex، والخانة الشمال قيمتها ×16."],
-  ["Number Systems","The fastest way from octal to binary is:",["Convert each octal digit to 3 bits","Divide by 10","Convert to ASCII","Use 4 bits for each octal digit"],0,"كل octal digit = 3 binary bits."],
-  ["Number Systems","The fastest way from hex to binary is:",["Each hex digit becomes 4 bits","Each hex digit becomes 3 bits","Multiply by 8","Add ASCII"],0,"كل hex digit = 4 binary bits."],
-  ["Number Systems","Binary 100110 split for octal should be:",["100 110","10 011 0","1001 10","1 00110"],0,"للتحويل إلى octal نقسم binary مجموعات 3 من اليمين."],
-  ["Number Systems","Binary 10100101 split for hex should be:",["1010 0101","101 001 01","10 10 01 01","101001 01"],0,"للتحويل إلى hex نقسم مجموعات 4 من اليمين."],
-  ["Number Systems","If a binary-to-octal group is 010, it represents:",["2","8","10","4"],0,"في Octal كل مجموعة Binary من 3 bits. قيم الخانات من الشمال 4، 2، 1. إذن 010 = 0×4 + 1×2 + 0×1 = 2."],
-  ["Number Systems","If decimal conversion asks you to use powers, base 16 means positions:",["1,16,256,...","1,8,64,...","1,2,4,...","1,10,100,..."],0,"كل نظام يستخدم قوى الأساس الخاص به."],
-  ["Number Systems","A common mistake in decimal-to-octal is reading remainders top-to-bottom. The correct reading is:",["Bottom-to-top","Left-to-right as written first","Ignore remainders","Multiply all quotients"],0,"نقرأ البواقي من آخر قسمة إلى أول قسمة."],
-  ["Number Systems","Which conversion is invalid as written without clarification: 49₈ to decimal?",["Invalid because 9 cannot be octal","Valid and equals 41","Valid and equals 49","Valid because any digit works"],0,"وجود 9 يكسر قاعدة octal."],
-  ["Number Systems","Why can 1111₂ equal F₁₆?",["1111₂ is 15 and F is 15","F means 16","Binary copies letters","Hex cannot use letters"],0,"F في hex يمثل 15."],
-  ["Number Systems","If the base is larger, does that always mean the value is larger?",["No, value depends on digits and positions","Yes always","Only with keyboards","Only in ASCII"],0,"مثلاً 10₂ = 2 لكن 10₁₀ = 10؛ الأساس يغير المعنى."],
+  ["Lec1 - Big Data & IoT","Big data in Lec1 means data sets so large or complex that:",["Traditional data processing application software is inadequate","They must always be printed first","They can only be stored on floppy disks","They are smaller than ordinary databases"],0,"Lec1 defines Big Data as too large/complex for traditional application software."],
+  ["Lec1 - Big Data & IoT","Which is listed as a key enabler for big data growth?",["Increase of storage capacities","Decrease of processing power","Elimination of all data types","Removal of Internet connections"],0,"Lec1: enablers include storage capacities, processing power, and availability of different data types."],
+  ["Lec1 - Big Data & IoT","The four V's in Lec1 are:",["Volume, Variety, Velocity, Veracity","Value, Vacuum, Version, Video","Voltage, Virus, Visual, Virtual","Voice, View, Vector, Validity"],0,"Lec1 lists four V's: Volume, Variety, Velocity, Veracity."],
+  ["Lec1 - Big Data & IoT","IoT things have unique identities, are connected to the Internet, and:",["Communicate and exchange data","Only store data offline","Always act as mainframes","Cannot control anything"],0,"IoT allows things to communicate and exchange data, control and information."],
+  ["Lec1 - Big Data & IoT","An intelligent home example is most connected to:",["IoT applications","Punch card tabulating machines","Shareware licensing","Disk defragmentation only"],0,"Lec1 includes IoT applications such as Intelligent Home."],
 
-  ["Logic","AND is best described in exam traps as:",["Strict: all conditions must be true","Easy: one condition enough","Opposite of input","Always 1"],0,"AND لا يخرج 1 إلا إذا كل المدخلات 1."],
-  ["Logic","OR is best described as:",["At least one true condition is enough","All conditions must be true","It reverses input","It stores files"],0,"OR يعطي 1 إذا وجد مدخل واحد على الأقل = 1."],
-  ["Logic","NOT is different because it:",["Has one input and inverts it","Requires two inputs","Stores data permanently","Adds numbers"],0,"NOT gate يعكس الإشارة."],
-  ["Logic","For two binary inputs A and B, why does the truth table have 4 rows?",["2^2 possible combinations","2+2 inputs","Because all tables have 4","Because byte = 4 bits"],0,"كل input له احتمالان، إذن 2×2 = 4."],
-  ["Logic","For three binary inputs, the truth table rows are:",["6","8","9","3"],1,"2^3 = 8."],
-  ["Logic","If a system opens a door only when card is valid AND PIN is correct, which gate matches?",["AND","OR","NOT","XOR only"],0,"لازم الشرطان يتحققوا."],
-  ["Logic","If an alarm rings when smoke OR high heat is detected, which gate matches?",["OR","AND","NOT","ROM"],0,"يكفي شرط واحد لتشغيل الإنذار."],
-  ["Logic","If input is 'not paid', and system needs the opposite state 'paid', the logic idea is:",["NOT","AND","OR","Bus"],0,"NOT يعكس الحالة."],
-  ["Logic","Modern logic gates rely mainly on:",["Transistors","Vacuum tubes only","Printers","Hard disks"],0,"الترانزستورات هي أساس الدوائر المنطقية الحديثة."],
-  ["Logic","A truth table is useful because it:",["Shows every possible input and output case","Stores files","Increases screen resolution","Compresses data"],0,"تعرض جميع الاحتمالات لتجنب التخمين."],
+  ["Lec2 - Data Representation","Why do data and programs need coding systems?",["To be represented in a manner understood by the computer","To make all computers mechanical","To remove the need for memory","To avoid using switches"],0,"Lec2: coding systems represent data and programs in a manner understood by the computer."],
+  ["Lec2 - Data Representation","Computer switches have two states represented as:",["1 for ON and 0 for OFF","8 for ON and 9 for OFF","A for ON and F for OFF","10 for ON and 2 for OFF"],0,"Lec2: switches are ON/OFF represented by 1/0."],
+  ["Lec2 - Data Representation","The smallest unit of data a binary computer can recognize is:",["Bit","Byte","Kilobyte","Word document"],0,"Bit is a single 1 or 0."],
+  ["Lec2 - Data Representation","A byte equals:",["8 bits","7 bits always","32 characters","1024 megabytes"],0,"Lec2: Byte = 8 bits."],
+  ["Lec2 - Data Representation","1 KB is shown in the lecture as:",["2^10 bytes = 1024 bytes","10 bytes exactly","8 bits exactly","2^20 bytes"],0,"Lec2: 1 Kilobyte = 2^10 bytes = 1024 bytes."],
+  ["Lec2 - Data Representation","Standard ASCII uses patterns of:",["7 bits","32 bits only","16 decimal digits","8 octal digits"],0,"Standard ASCII uses 7-bit patterns."],
+  ["Lec2 - Data Representation","Extended ASCII was developed as:",["8-bit extensions to accommodate major language groups","A 2-bit code for numbers only","A replacement for all operating systems","A compression program"],0,"Lec2: ISO developed 8-bit extensions to ASCII for major language groups."],
+  ["Lec2 - Data Representation","Unicode is described as:",["A universal coding standard for text in ancient or modern languages","A storage device standard only","A logic gate made of silicon","A mobile operating system"],0,"Unicode is a universal coding standard designed for text-based data in many languages."],
 
-  ["CPU","Fetch-decode-execute-store is called:",["Machine cycle","File cycle","Print cycle","Internet cycle"],0,"هذه مراحل machine cycle."],
-  ["CPU","Fetch means the CPU:",["Gets the instruction/data from memory","Understands the instruction meaning","Performs the calculation","Saves final output only"],0,"Fetch = إحضار التعليمة/البيانات."],
-  ["CPU","Decode means the CPU:",["Interprets what the instruction requires","Writes to disk","Prints result","Receives mouse input"],0,"Decode = فهم/ترجمة التعليمة داخلياً."],
-  ["CPU","Execute means the CPU:",["Performs the required operation","Loads the OS only","Deletes memory","Displays icons"],0,"Execute = تنفيذ العملية."],
-  ["CPU","Store in machine cycle means:",["Put result in memory/register/storage location","Buy a storage device","Open a shop","Change monitor color"],0,"Store = حفظ الناتج في مكان مناسب."],
-  ["CPU","ALU is chosen when the question says:",["Integer arithmetic and logical operations","Floating-point only","File backup","Booting"],0,"ALU للعمليات الحسابية والمنطقية الأساسية."],
-  ["CPU","FPU is chosen when the question emphasizes:",["Decimal/floating-point calculations","Keyboard input","Antivirus scan","Folder names"],0,"FPU للعمليات العشرية/العائمة."],
-  ["CPU","Control Unit is chosen when the question says:",["Directs and coordinates CPU operations","Stores files forever","Displays output","Compresses folders"],0,"CU ينظم ويوجه تنفيذ التعليمات."],
-  ["CPU","Cache improves speed because it:",["Keeps frequently used data close to CPU","Makes files permanent","Changes decimal to octal","Adds more printers"],0,"Cache ذاكرة سريعة قرب المعالج."],
-  ["CPU","L1 cache is usually faster than L3 because:",["It is closer/smaller inside CPU hierarchy","It is on the Internet","It is a hard disk","It is a printer"],0,"كلما اقتربت من CPU زادت السرعة غالباً."],
-  ["CPU","Clock speed alone does not fully determine performance because:",["Cores, cache, architecture, and workload also matter","GHz means storage only","CPU never affects speed","Monitor controls all speed"],0,"الأداء له عوامل متعددة."],
-  ["CPU","Dual-core CPU means:",["Two processing cores on one chip","Two monitors","Two keyboards","Two operating systems only"],0,"Dual-core = نواتان داخل المعالج."],
-  ["CPU","Bus is best understood as:",["Pathway carrying data between components","A storage format","A software license","An output sound"],0,"Bus مسار لنقل البيانات."],
-  ["CPU","A bottleneck happens when:",["One slow component limits overall performance","All parts are equally fast","The screen is colorful","Files are named well"],0,"أبطأ جزء قد يحد من سرعة النظام كله."],
-  ["CPU","If the question asks why more RAM may help multitasking, the reason is:",["More programs/data can stay in memory without heavy swapping","It changes keyboard layout","It increases printer ink","It changes ASCII"],0,"RAM الأكبر تقلل الاعتماد على virtual memory."],
+  ["Lec2 - Number Systems","Decimal system uses:",["Base 10 and digits 0 to 9","Base 2 and digits 0 to 1","Base 8 and digits 0 to 7","Base 16 without letters"],0,"Decimal: base 10, digits 0-9."],
+  ["Lec2 - Number Systems","Binary is the system used by the computer and uses:",["Base 2 with digits 0 and 1","Base 8 with digits 0 to 7","Base 10 with digits 0 to 9","Base 16 with A to F only"],0,"Lec2: Binary system is used by the computer, base 2."],
+  ["Lec2 - Number Systems","In positional notation, the value of a digit depends on:",["Its position and the base power","The color of the slide","The operating system name","The keyboard model"],0,"Lec2: position determines the power to which base is raised."],
+  ["Lec2 - Number Systems","Binary 1101 equals decimal 13 because:",["1×8 + 1×4 + 0×2 + 1×1","1×10 + 1×9 + 0×8 + 1×7","It is copied directly as 1101","It uses base 8 weights"],0,"The lecture example: 1101₂ = 13₁₀."],
+  ["Lec2 - Number Systems","The largest number stored in one byte is:",["11111111₂ = 255₁₀","00000000₂ = 255₁₀","11111111₂ = 8₁₀","1010₂ = 255₁₀"],0,"Lec2: largest byte number is 11111111 = 255."],
+  ["Lec2 - Number Systems","Word size means:",["Number of bits the CPU can handle at one time","Number of English words in a file","Number of bytes in a hard disk","Number of rows in a truth table"],0,"Lec2 defines word size as bits CPU can handle at one time."],
+  ["Lec2 - Number Systems","Octal exists to:",["Shorten long binary numbers","Replace all decimal arithmetic","Represent only text characters","Store only videos"],0,"Lec2: To shorten long binary numbers Octal numbers are used."],
+  ["Lec2 - Number Systems","Octal 46 equals decimal 38 because:",["6 + 4×8 = 38","4 + 6×8 = 52","46×8 = 368","4×6 + 8 = 32"],0,"Lecture example: 46₈ = 6 + 4×8¹ = 38₁₀."],
+  ["Lec2 - Number Systems","The valid octal digits are:",["0 to 7","0 to 9","0 to F","1 and 0 only"],0,"Octal base 8 uses digits 0-7."],
+  ["Lec2 - Number Systems","Hexadecimal uses:",["Base 16 with digits 0-9 and A-F","Base 8 with digits 0-7","Base 2 with ON/OFF only","Base 10 without positional notation"],0,"Lec2: hexadecimal base 16 uses 0-9,A,B,C,D,E,F."],
+  ["Lec2 - Number Systems","A5₁₆ equals 165₁₀ because:",["5 + 10×16 = 165","10 + 5×16 = 90","A×5 = 50","A is equivalent to 16"],0,"Lecture example: A5₁₆ = 5 + 10×16¹ = 165."],
+  ["Lec2 - Number Systems","When converting decimal to any base n, the remainders are grouped so that:",["First remainder is LSB and last remainder is MSB","First remainder is always ignored","All quotients become output digits","Remainders must be larger than n"],0,"Lec2: first remainder is least significant, last is most significant."],
+  ["Lec2 - Number Systems","In decimal-to-any-base repeated division, each remainder must be:",["Less than the base n","Equal to the original decimal number","Always greater than 9","Ignored after every division"],0,"Lec2 states the remainder will always be less than base n."],
+  ["Lec2 - Number Systems","MSB refers to:",["The leftmost highest-order bit","The rightmost lowest-order bit","A mobile server bus","A software license"],0,"MSB is highest-order bit, leftmost bit."],
+  ["Lec2 - Number Systems","LSB refers to:",["The rightmost lowest-order bit","The leftmost highest-order bit","A Linux security backup","A type of Unicode"],0,"LSB is lowest-order bit, rightmost bit."],
 
-  ["Memory","RAM is volatile, so the practical result is:",["Unsaved work may be lost when power is off","Files become safer","ROM is deleted first","Monitor stops being output"],0,"RAM تفقد المحتوى بانقطاع الكهرباء."],
-  ["Memory","ROM is useful in startup because:",["It keeps essential instructions without power","It stores only user videos","It is faster than all cache","It is a mouse"],0,"ROM غير متطايرة وتحفظ تعليمات أساسية."],
-  ["Memory","Secondary storage differs from main memory because it:",["Keeps data long-term but is usually slower","Is always smaller than cache","Cannot store files","Is only inside CPU"],0,"التخزين طويل المدى أبطأ من الذاكرة الرئيسية غالباً."],
-  ["Memory","If a computer loses open work after electricity cuts, the missing step was:",["Saving to non-volatile storage","Increasing monitor brightness","Changing binary base","Using a speaker"],0,"لازم تحفظ على storage غير متطاير."],
-  ["Memory","Cache, RAM, and SSD ordered generally fastest to slower:",["Cache, RAM, SSD","SSD, RAM, Cache","RAM, SSD, Cache","All same"],0,"Cache أسرع، ثم RAM، ثم التخزين."],
-  ["Memory","Why is RAM called main memory?",["CPU uses it directly for active programs/data","It is printed on paper","It is always permanent","It is a communication device"],0,"البرامج والبيانات الجارية تكون في RAM."],
-  ["Memory","If a question says 'firmware', think of:",["Software stored in hardware/non-volatile memory","Only games","Only Excel files","Only speaker output"],0,"Firmware برامج قريبة من الهاردوير محفوظة غالباً في ROM/flash."],
-  ["Memory","The best reason storage capacity is measured in GB/TB is:",["It describes how much data can be kept","It describes CPU arithmetic speed","It describes input quality","It describes screen color only"],0,"السعة تعبر عن كمية البيانات المخزنة."],
-  ["Memory","If an app is slow because it keeps using disk as memory, the concept is:",["Virtual memory / swapping","ASCII","Open source","Truth table"],0,"استخدام التخزين كذاكرة بديلة يسبب بطء."],
-  ["Memory","The strongest clue for non-volatile is:",["Keeps data without power","Needs constant power","Only performs input","Only handles logic gates"],0,"Non-volatile = لا يحتاج كهرباء مستمرة لحفظ المحتوى."],
+  ["Lec2 - Logic","A truth table lists:",["All possible input combinations and the output for each","Only hardware prices","Only file sizes","Only operating system names"],0,"Lec2: truth table lists all possible input values and output value."],
+  ["Lec2 - Logic","The NOT operation performs which action?",["Flips one bit","Adds two decimal numbers directly","Stores files permanently","Searches the hard drive"],0,"NOT flips a single bit: 1 becomes 0 and 0 becomes 1."],
+  ["Lec2 - Logic","For two binary inputs x and y, a truth table has four rows because:",["There are four possible combinations","Each byte has four bits","ASCII is four bits","Octal has four digits"],0,"Two binary inputs have 2×2 combinations."],
+  ["Lec2 - Logic","AND, OR, and NOT are described as:",["Fundamental logical operations used as building blocks","Operating system editions","Storage devices","Software ownership rights"],0,"Lec2 presents NOT, AND, OR as fundamental operations for logic circuits."],
+  ["Lec2 - Logic","Logic gates in modern computers are based on:",["Transistors made of semiconducting material such as silicon","Only punch cards","Only vacuum tubes","Only hard drives"],0,"Modern logic gates are based on transistors formed of semiconductor layers such as silicon."],
+  ["Lec2 - Logic","Early computers' switching devices were generally based on:",["Vacuum tubes or valves","Unicode characters","Web-based software","Cloud data lakes"],0,"Lec2: early computers used vacuum tubes, collectively called valves."],
+  ["Lec2 - Logic","Why are logic gates important inside a computer?",["They physically perform logic operations on binary data","They are software licenses","They store photos in rows and columns","They replace the operating system"],0,"To physically perform logic operations, computers use logic gates."],
+  ["Lec2 - Logic","A complex logic circuit can be built by:",["Combining basic logic gates","Installing freeware only","Adding more social media data","Compressing files"],0,"Lec2: logic gates can be combined in circuits for complex operations."],
 
-  ["Big Data","A hospital collects lab results, scans, doctor notes, and sensor readings. Which V is most obvious?",["Variety","Only Volume","Only Value","Only Clock speed"],0,"مصادر وأشكال مختلفة: structured, images, text, sensor data."],
-  ["Big Data","A stock trading system receives thousands of updates per second. Which V is central?",["Velocity","Variety","Veracity only","ASCII"],0,"السرعة العالية لتدفق البيانات = Velocity."],
-  ["Big Data","A social media platform stores billions of posts and videos. Which V is central?",["Volume","ROM","ALU","Word size"],0,"الحجم الهائل = Volume."],
-  ["Big Data","Fake reviews in a dataset mainly create a problem with:",["Veracity","Velocity","Word size","Output device"],0,"Veracity تعني الثقة والجودة والدقة."],
-  ["Big Data","A company analyzes data and discovers how to reduce waste. Which V appears?",["Value","Only Variety","Only Input","Only ROM"],0,"الفائدة العملية من البيانات = Value."],
-  ["Big Data","CSV tables with fixed columns are usually:",["Structured","Unstructured","No data","Optical"],0,"الجداول ذات أعمدة ثابتة structured."],
-  ["Big Data","Images, videos, and free text reviews are usually:",["Unstructured","Structured only","CPU registers","Truth tables"],0,"لا تملك بنية جدولية ثابتة غالباً."],
-  ["Big Data","JSON and XML are often called:",["Semi-structured","No structure at all","Hardware","Volatile memory"],0,"لديها تنظيم لكنه ليس جدولاً ثابتاً كقواعد البيانات."],
-  ["Big Data","Why is cleaning data before analysis important?",["Bad/missing/duplicate data can lead to wrong conclusions","It changes monitor size","It increases keyboard speed","It removes all value"],0,"جودة التحليل تعتمد على جودة البيانات."],
-  ["Big Data","If analysis explains why sales dropped last month, it is closest to:",["Diagnostic analytics","Predictive only","Prescriptive only","Input device"],0,"Diagnostic يبحث عن السبب."],
-  ["Big Data","If analysis forecasts next semester's demand, it is:",["Predictive analytics","Descriptive analytics only","Formatting","Booting"],0,"التوقع للمستقبل = Predictive."],
-  ["Big Data","If analysis recommends increasing stock of a product, it is:",["Prescriptive analytics","ASCII","ROM","NOT gate"],0,"اقتراح فعل/قرار = Prescriptive."],
-  ["Big Data","A dashboard that only says 'sales were 5000' is mostly:",["Descriptive analytics","Predictive analytics","Prescriptive analytics","Nanotechnology"],0,"يصف ما حدث."],
-  ["Big Data","Why traditional tools may fail with Big Data?",["Data is too large, fast, varied, or complex","Because keyboards are old","Because monitors are small","Because all data is binary"],0,"Big Data تتجاوز قدرة الأدوات التقليدية أحياناً."],
-  ["Big Data","A smart factory with connected sensors is related to:",["IoT","Freeware","ASCII only","Printer utilities"],0,"IoT أجهزة متصلة تجمع وتتبادل بيانات."],
-  ["Big Data","If a sensor has identity, connection, and sends readings, it is likely part of:",["Internet of Things","Only mainframe","Only open source","Only ALU"],0,"IoT = أشياء متصلة تتبادل بيانات."],
-  ["Big Data","Data integration means:",["Combining data from multiple sources","Deleting all records","Increasing CPU clock only","Changing keyboard language"],0,"Integration دمج مصادر البيانات."],
-  ["Big Data","A data lake is most useful when:",["Many raw data types must be stored at scale","Only one small text file exists","There is no data","Only a printer is needed"],0,"Data lake يناسب أنواع وكمية كبيرة من البيانات الخام."],
-  ["Big Data","The biggest exam trap in Big Data V's is to confuse Velocity with:",["Speed of arrival, not size","Accuracy only","Number of formats only","Profit only"],0,"Velocity سرعة التدفق، أما الحجم فهو Volume."],
-  ["Big Data","The best answer for 'useful insight' is not Volume but:",["Value","Variety","Velocity","Vacuum tube"],0,"Value = تحويل البيانات لفائدة."],
+  ["Chapter 3 - Software","System software includes:",["Operating system and utility programs that control the computer system","Only games and web browsing programs","Only financial transaction data","Only physical parts"],0,"Chapter 3: system software is OS and utilities controlling the system."],
+  ["Chapter 3 - Software","Application software is best tested by which example?",["Word processing or playing a game","Booting the kernel only","Configuring device drivers only","Managing hard drive sectors only"],0,"Application software allows user-specific tasks like word processing, games, taxes, web browsing."],
+  ["Chapter 3 - Software","The operating system acts as:",["An intermediary between user and computer","A replacement for all applications","A database table only","A scanner driver only"],0,"Chapter 3: OS acts as intermediary between user and computer."],
+  ["Chapter 3 - OS Functions","During booting, the operating system:",["Loads the kernel into memory and starts processes","Only compresses user documents","Only opens a web browser","Only deletes temporary files"],0,"Chapter 3: booting loads kernel into memory and starts processes."],
+  ["Chapter 3 - OS Functions","Device drivers are mainly connected with:",["Configuring devices","Software ownership rights","Social media analytics","Truth table rows"],0,"OS functions include configuring devices; device drivers are often needed."],
+  ["Chapter 3 - OS Functions","Plug and Play means devices are:",["Recognized automatically","Always deleted automatically","Compressed into zip files","Converted into Unicode"],0,"Chapter 3: Plug and Play devices are recognized automatically."],
+  ["Chapter 3 - OS Functions","File management in the OS keeps track of files in:",["A hierarchical format","A random no-folder format","Only social media feeds","Only logic gates"],0,"Chapter 3: file management keeps track of files in hierarchical format."],
+  ["Chapter 3 - OS Functions","Security functions in the OS include:",["Passwords, biometric characteristics, and firewalls","Only changing screen brightness","Only converting binary to octal","Only uninstalling games"],0,"Chapter 3 lists passwords, biometrics, and firewalls under security."],
 
-  ["Computer Types","A bank processing huge numbers of transactions for many branches most likely uses:",["Mainframe","Simple calculator","Keyboard","Tablet only"],0,"Mainframe مناسب للمؤسسات والمعاملات الضخمة."],
-  ["Computer Types","Weather simulation and nuclear research most likely need:",["Supercomputer","Embedded thermostat","Printer","Freeware"],0,"Supercomputer للحسابات العلمية الهائلة."],
-  ["Computer Types","A control chip inside a washing machine is:",["Embedded computer","Mainframe","Desktop PC","Supercomputer"],0,"Embedded داخل منتج يؤدي وظيفة محددة."],
-  ["Computer Types","A laptop used by one student is generally:",["Personal computer","Mainframe","Supercomputer","IoT sensor only"],0,"PC يخدم مستخدماً واحداً غالباً."],
-  ["Computer Types","A smartphone is tricky because it is powerful, but classification in basics is:",["Mobile device","Mainframe","Only storage","Only output"],0,"Smartphone يعد mobile device."],
-  ["Computer Types","A tablet with pen input is chosen when the clue says:",["Touch/pen portable computer","Large bank transactions","Fastest scientific calculations","Only server room"],0,"Tablet يعتمد على touch/pen."],
-  ["Computer Types","A server differs from a normal PC mainly because it:",["Provides services/resources to other computers/users","Has no CPU","Cannot store data","Only displays pictures"],0,"Server يخدم أجهزة أو مستخدمين آخرين."],
-  ["Computer Types","If the phrase is 'fastest and most expensive', choose:",["Supercomputer","Microcomputer","Embedded computer","Scanner"],0,"هذه علامة supercomputer."],
-  ["Computer Types","If the phrase is 'large organization, many users, transactions', choose:",["Mainframe","Mouse","Tablet only","Speaker"],0,"علامات mainframe."],
-  ["Computer Types","If the phrase is 'built into another product', choose:",["Embedded computer","Desktop","Mainframe","Cloud storage"],0,"Embedded = داخل جهاز/منتج."],
+  ["Chapter 3 - Processing","Multitasking means:",["More than one program/task can be open at one time","Many CPUs always work on one job","Only one thread exists in a program","Hard drive space is used as RAM"],0,"Chapter 3: multitasking allows more than one program open; CPU rotates quickly."],
+  ["Chapter 3 - Processing","Why does multitasking appear simultaneous?",["CPU rotates quickly between tasks","Each task has a separate monitor","No processing is actually done","Files are compressed first"],0,"Chapter 3: switching is done quickly, so tasks appear to run at same time."],
+  ["Chapter 3 - Processing","A thread is:",["A sequence of instructions within a program independent of other threads","A type of storage medium","A license for open-source software","A mobile OS only"],0,"Chapter 3 defines thread this way."],
+  ["Chapter 3 - Processing","Multithreading improves processing by:",["Rotating between multiple threads faster and more efficiently","Deleting temporary files","Recognizing plug and play hardware","Uploading backup to Internet only"],0,"Chapter 3: multithreading rotates between multiple threads for efficiency."],
+  ["Chapter 3 - Processing","Multiprocessing usually means:",["Each CPU or core works on a different job","All CPUs always work together on one job","Only hard drive space acts as RAM","One program cannot be open"],0,"Chapter 3: multiprocessing each CPU/core typically works on a different job."],
+  ["Chapter 3 - Processing","Parallel processing is different because CPUs or cores typically:",["Work together to complete one job more quickly","Always uninstall utilities","Only manage passwords","Always run one desktop game"],0,"Chapter 3: parallel processing cores work together on one job."],
+  ["Chapter 3 - Processing","Virtual memory uses:",["Hard drive space as additional RAM","RAM as permanent CD storage","A firewall as processor","A scanner as memory"],0,"Chapter 3: virtual memory uses hard drive space as additional RAM."],
+  ["Chapter 3 - Processing","Memory management aims at:",["Optimizing the use of main memory RAM","Changing ownership rights","Making all software public domain","Replacing Unicode"],0,"Chapter 3: memory management optimizes RAM use."],
 
-  ["Security & Utilities","A user wants to recover files after a disk failure. The preventive utility is:",["Backup software","Paint app","Monitor driver only","Truth table"],0,"Backup يحفظ نسخاً للاسترجاع."],
-  ["Security & Utilities","Antivirus is not only for removing viruses; it also:",["Detects/prevents malware threats","Increases RAM physically","Converts decimal to hex","Creates truth tables"],0,"وظيفته حماية من malware."],
-  ["Security & Utilities","A suspicious email attachment should not be opened because:",["It may contain malware or phishing risk","It improves CPU speed","It is always structured data","It changes RAM to ROM"],0,"الملفات المشبوهة خطر أمني."],
-  ["Security & Utilities","Strong passwords matter because they:",["Reduce unauthorized access risk","Make files smaller","Increase clock speed","Turn data into information"],0,"كلمات المرور تحمي الحسابات."],
-  ["Security & Utilities","Two-factor authentication improves security by:",["Requiring another proof besides password","Deleting all data","Replacing CPU","Changing base 8 to base 2"],0,"عامل إضافي يصعب الاختراق."],
-  ["Security & Utilities","Software updates are important because they often:",["Fix bugs and security vulnerabilities","Only change colors","Delete all apps","Make hardware physical"],0,"التحديثات تسد ثغرات وتحسن الاستقرار."],
-  ["Security & Utilities","A compression utility is least suitable for:",["Detecting viruses","Reducing file size","Preparing files for transfer","Saving storage space"],0,"كشف الفيروسات وظيفة antivirus لا compression."],
-  ["Security & Utilities","If the question asks for 'properly removing a program', choose:",["Uninstall utility","Scanner","ALU","ASCII"],0,"Uninstall يزيل البرنامج وملفاته المرتبطة."],
-  ["Security & Utilities","A backup stored in the same damaged laptop is weaker because:",["The same failure can destroy original and backup","It becomes faster","It turns into RAM","It becomes open source"],0,"النسخة الاحتياطية الأفضل تكون منفصلة أو cloud."],
-  ["Security & Utilities","The deep idea behind utilities is that they:",["Maintain, protect, and manage the computer","Are always games","Are physical parts only","Replace all applications"],0,"Utilities أدوات مساعدة للصيانة والإدارة والحماية."]
+  ["Chapter 3 - Operating Systems","DOS traditionally used:",["Command-line interface","Touch-only mobile interface","No interface at all","Only cloud dashboards"],0,"Chapter 3: DOS traditionally used command-line interface."],
+  ["Chapter 3 - Operating Systems","Windows NT is important because it was:",["First 32-bit Windows designed for high-end workstations and servers","A mobile OS for phones only","An open-source flavor of UNIX","A diagnostic utility"],0,"Chapter 3 identifies Windows NT as first 32-bit Windows for high-end workstations/servers."],
+  ["Chapter 3 - Operating Systems","Windows 7 is described as:",["Starting up and responding faster than Vista and running well on netbooks","Replacing all mobile operating systems","Being only a command-line system","Being based on UNIX only"],0,"Chapter 3 lists Windows 7 improvements including faster startup/response and netbook support."],
+  ["Chapter 3 - Operating Systems","Windows 8 changes focused mainly on:",["Improving user experience on mobile devices such as tablets","Removing support for tablets","Returning to punch cards","Replacing Linux servers"],0,"Chapter 3 says Windows 8 focused on mobile/tablet user experience."],
+  ["Chapter 3 - Operating Systems","Mac OS is:",["Proprietary OS for Apple computers based on UNIX","Open-source Linux for all companies","A disk management utility only","A mobile phone hardware type"],0,"Chapter 3: Mac OS is proprietary for Apple and based on UNIX."],
+  ["Chapter 3 - Operating Systems","Time Machine in Mac OS is connected with:",["Backup and restore","Text encoding","Logic gates","Fraud analytics"],0,"Chapter 3: Time Machine is for backup and restore."],
+  ["Chapter 3 - Operating Systems","UNIX is characterized as:",["Multiuser and multitasking, developed in late 1960s for midrange servers","A freeware antivirus only","A personal computer category","A compression utility"],0,"Chapter 3: UNIX is multiuser/multitasking, late 1960s, midrange servers."],
+  ["Chapter 3 - Operating Systems","Linux is best described in the lecture as:",["A free flavor of UNIX and open-source software","A commercial Windows edition","A hardware network adapter","A diagnostic program"],0,"Chapter 3: Linux is a free UNIX flavor and open-source."],
+  ["Chapter 3 - Operating Systems","Android in the slides is:",["Linux-based OS developed by Open Handset Alliance including Google","A disk cleanup utility","A desktop-only Windows version","A public domain office suite"],0,"Chapter 3 states Android is Linux based and developed by Open Handset Alliance including Google."],
+  ["Chapter 3 - Operating Systems","Symbian OS is associated with:",["Smart phones such as Nokia","Mainframe data centers","Windows desktop search","Zip files"],0,"Chapter 3: Symbian OS designed for smart phones, example Nokia."],
+
+  ["Chapter 3 - Utilities","Search tools are designed to:",["Search for files on the user's hard drive","Remove all programs automatically","Represent text in Unicode","Forecast customer churn"],0,"Chapter 3: search tools search files on hard drive."],
+  ["Chapter 3 - Utilities","Diagnostic programs:",["Evaluate the system and recommend fixes for errors","Only write programs for users","Only compress files into zip format","Only act as mobile operating systems"],0,"Chapter 3 defines diagnostic programs this way."],
+  ["Chapter 3 - Utilities","Disk management programs diagnose and repair problems related to:",["Hard drive","Monitor color","Software license","Social media posts"],0,"Chapter 3: disk management programs diagnose/repair hard drive problems."],
+  ["Chapter 3 - Utilities","Why should programs be uninstalled properly instead of just deleted?",["To remove them without leaving bits and pieces behind","To convert them into open source","To increase Unicode bits","To force multitasking"],0,"Chapter 3: uninstall utilities remove programs without leaving bits and pieces."],
+  ["Chapter 3 - Utilities","Clean up utilities are used to:",["Delete temporary files","Predict future trends","Configure all mobile phones","Represent 7-bit ASCII"],0,"Chapter 3: clean up utilities delete temporary files."],
+  ["Chapter 3 - Utilities","File compression programs reduce file size so files:",["Take less storage or transmit faster over the Internet","Become operating systems","Turn into hardware","Cannot be unzipped"],0,"Chapter 3: compression reduces size for storage/transmission; zip and unzip."],
+  ["Chapter 3 - Utilities","Backup and recovery utilities are critical because they:",["Make backup/restoration easier using duplicate copies","Only delete applications","Only change GUI themes","Only run command-line DOS"],0,"Chapter 3: backup is duplicate copy; backup/recovery makes restoration easier."],
+  ["Chapter 3 - Utilities","Security programs include:",["Antivirus, antispyware, and firewalls","Only word processors","Only ERP systems","Only text encoders"],0,"Chapter 3 lists antivirus, antispyware, and firewalls."],
+
+  ["Chapter 3 - Ownership","Commercial software is:",["Copyrighted software developed usually by a commercial company for sale","Software with source code donated to public domain","Free software always without copyright","A device driver only"],0,"Chapter 3: commercial software is copyrighted and developed for sale."],
+  ["Chapter 3 - Ownership","Shareware is distributed on:",["The honor system; pay or uninstall after trial","A rule that source code must be public","A guarantee it has no copyright","A rule that it must run from the Internet only"],0,"Chapter 3: shareware is copyrighted, honor system, pay or uninstall after trial."],
+  ["Chapter 3 - Ownership","Freeware means:",["Copyrighted programs given away free of charge","Software with no copyright and donated to public domain","Software whose source code must be modified","Software sold only to enterprises"],0,"Chapter 3: freeware is copyrighted but given away free."],
+  ["Chapter 3 - Ownership","Public domain software is:",["Not copyrighted and ownership rights donated to public domain","Copyrighted trial software","Commercial software sold for profit","A device driver"],0,"Chapter 3 defines public domain software this way."],
+  ["Chapter 3 - Ownership","Open source software means:",["Source code is made available to the general public","It must be downloaded as a zip file","It cannot run on Linux","It is always a mobile app"],0,"Chapter 3: open-source programs have source code available."],
+  ["Chapter 3 - Software Delivery","Installed software must:",["Be installed before it can run","Run only directly from the Internet","Always be public domain","Only work on phones"],0,"Chapter 3: installed software must be installed before it can run."],
+  ["Chapter 3 - Software Delivery","Web-based software is also called:",["SaaS or cloudware","BIOS or firmware","MSB or LSB","ASCII or Unicode"],0,"Chapter 3: web-based software is also Software as a Service and cloudware."],
+  ["Chapter 3 - Software Delivery","An ASP in the web-based software slide refers to:",["Application service provider","Advanced storage processor","ASCII software protocol","Automated security password"],0,"Chapter 3: web-based software is available via an application service provider (ASP)."],
+
+  ["Big Data","Big Data requires exceptional technologies because:",["Traditional database tools may not handle its size and complexity efficiently","It is always smaller than ordinary files","It contains only printed reports","It never needs analytics"],0,"Big Data PDF: unlike traditional data sets, it requires exceptional technologies and sophisticated analytics."],
+  ["Big Data","The goal of processing Big Data under the 5 V's is mainly captured by:",["Value","Velocity","Volume","Variety"],0,"Value: extract meaningful value and useful information from big data."],
+  ["Big Data","A retail chain with millions of daily transactions mostly demonstrates:",["Volume","Veracity only","Public domain software","MSB"],0,"Retail example: millions of transactions per day = Volume."],
+  ["Big Data","Customer reviews written in free-form text in the retail example demonstrate:",["Unstructured data under Variety","Only structured SQL rows","Only diagnostic utilities","Only binary notation"],0,"Retail example: customer reviews free-form text are unstructured data and part of Variety."],
+  ["Big Data","Clickstream data from websites in the retail example is:",["Semi-structured data","A logic gate","A supercomputer cluster","A mobile operating system"],0,"Big Data PDF lists clickstream data as semi-structured in retail variety example."],
+  ["Big Data","Social media data may be misleading or irrelevant, which mainly affects:",["Veracity","Volume","Velocity","Compression"],0,"Retail example: reliability varies; social media may be misleading, so veracity."],
+  ["Big Data","Using purchase history to personalize promotions is an example of Big Data producing:",["Value","Only raw Volume","Only file compression","Only operating system booting"],0,"Retail example: personalization and improved sales show Value."],
+  ["Big Data","Big Data improves decision-making by:",["Providing deeper insights and comprehensive view of data","Removing the need for data cleaning","Replacing all operating systems","Making all software freeware"],0,"Importance slide: enhanced analytics help make informed decisions by comprehensive data view."],
+  ["Big Data","In finance, real-time fraud detection is achieved by analyzing:",["Transaction data across millions of operations","Only speaker output","Only public domain software","Only keyboard input"],0,"Finance example: big data analyzes transaction data across millions of operations to detect fraud."],
+  ["Big Data","Retailers can predict demand for umbrellas by analyzing weather, social trends, and historical sales. This shows:",["Big Data supports inventory and marketing decisions","Only ASCII text representation","Only disk cleanup","Only command-line DOS"],0,"Retail example: predict demand and adjust inventory/marketing."],
+  ["Big Data","Structured data is easiest to search in databases because it is:",["Organized in rows and columns","Only images and videos","Without any predefined format","Made only of XML tags"],0,"Structured data is highly organized, often rows and columns like SQL."],
+  ["Big Data","Financial transaction records are usually:",["Structured data","Unstructured data","Logic circuits","Operating systems"],0,"Big Data PDF lists transactional data as structured data."],
+  ["Big Data","Videos, audio files, images, emails, articles, reviews, and customer feedback are mostly:",["Unstructured data","Structured SQL data only","Processor cores","Search tools"],0,"Unstructured data includes social media, multimedia, and textual data."],
+  ["Big Data","XML and JSON are:",["Semi-structured data","Mainframe computers","Vacuum tubes","Public domain software"],0,"Semi-structured examples include XML and JSON."],
+  ["Big Data","Emails and logs can be semi-structured because they contain:",["Fields like sender, receiver, and timestamp","Only numeric rows and columns","No text at all","Only CPU instructions"],0,"Big Data PDF: emails/logs are textual but contain structured elements."],
+  ["Big Data","The first step in the big data analytics process is:",["Data Collection","Data Visualization","Data Storage","Prescriptive Analytics"],0,"Key processes start with Data Collection."],
+  ["Big Data","Data cleaning is needed to:",["Correct inaccuracies, remove duplicates, and handle missing values","Combine all CPUs into one core","Convert all text into public domain","Draw charts before analysis only"],0,"Big Data PDF defines data cleaning this way."],
+  ["Big Data","Data integration means:",["Combining data from different sources into a unified view","Deleting all unstructured data","Only storing data in ROM","Only making a zip file"],0,"Key processes: data integration combines sources and provides unified view."],
+  ["Big Data","Scalable storage for big data may use:",["Hadoop or cloud-based data lakes","Only floppy disks","Only Unicode tables","Only DOS commands"],0,"Data storage slide mentions Hadoop and cloud-based data lakes."],
+  ["Big Data","Data visualization makes analysis results:",["Comprehensible and actionable using graphs, charts, and dashboards","Smaller by zipping them","Available as device drivers","Stored only in CPU registers"],0,"Visualization presents results visually to make them comprehensible/actionable."],
+  ["Big Data","Descriptive analytics answers mainly:",["What happened in the past","What exact action should be taken","Which device driver is missing","Which OS is proprietary"],0,"Types slide: descriptive analyzes past data to understand trends and behaviors."],
+  ["Big Data","Predictive analytics is used to:",["Forecast future probabilities and trends","Only delete duplicates","Only draw dashboards","Only manage passwords"],0,"Predictive analytics forecasts future outcomes based on historical data."],
+  ["Big Data","Prescriptive analytics goes beyond prediction by:",["Suggesting actions to achieve desired outcomes","Only showing historical sales numbers","Only storing raw data","Only detecting device drivers"],0,"Prescriptive suggests recommended actions."],
+  ["Big Data","Diagnostic analytics focuses on:",["What happened and why","Only future probability","Only software licenses","Only byte prefixes"],0,"Diagnostic analytics determines what happened and why."],
+  ["Big Data","Analyzing production failures to identify process flaws is:",["Diagnostic analytics","Descriptive analytics only","Web-based software","Unicode coding"],0,"Big Data PDF gives this as diagnostic analytics example."]
 ];
 
 function rebalanceDeepChoices(questions, offset = 0) {
   const targetPositions = [1, 3, 0, 2];
   const lengthFillers = [
-    "in this exact case",
-    "based only on the wording given",
-    "under the condition in the question",
-    "as the complete explanation here"
+    "in this exact lecture context",
+    "based on the slide wording",
+    "according to the given PDF",
+    "as stated in the course material"
   ];
 
   questions.forEach((question, questionIndex) => {
@@ -183,7 +192,7 @@ function rebalanceDeepChoices(questions, offset = 0) {
     const lengths = question.answers.map((answer) => answer.length);
     const correctLength = lengths[question.correct];
     const longestWrong = Math.max(...lengths.filter((_, index) => index !== question.correct));
-    if (correctLength > longestWrong + 6) {
+    if (correctLength > longestWrong + 8) {
       const wrongTargets = lengths
         .map((length, index) => ({ length, index }))
         .filter((item) => item.index !== question.correct)
@@ -194,19 +203,24 @@ function rebalanceDeepChoices(questions, offset = 0) {
   });
 }
 
-var deepQuiz = deepQuizBank.filter((_, index) =>
-  index < 10 ||
-  (index >= 10 && index < 18) ||
-  (index >= 20 && index < 28) ||
-  (index >= 30 && index < 38) ||
-  (index >= 40 && index < 48) ||
-  (index >= 50 && index < 62) ||
-  (index >= 65 && index < 73) ||
-  (index >= 75 && index < 85) ||
-  (index >= 90 && index < 98) ||
-  (index >= 100 && index < 112) ||
-  (index >= 120 && index < 125) ||
-  (index >= 130 && index < 133)
-).map(([topic, question, answers, correct, explanation]) => ({ topic, question, answers, correct, explanation }));
+var deepQuiz = deepQuizBank
+  .filter((_, index) =>
+    index < 6 ||
+    (index >= 10 && index < 16) ||
+    (index >= 18 && index < 24) ||
+    (index >= 26 && index < 29) ||
+    (index >= 31 && index < 37) ||
+    index === 43 ||
+    (index >= 48 && index < 56) ||
+    (index >= 56 && index < 68) ||
+    (index >= 71 && index < 76) ||
+    (index >= 79 && index < 86) ||
+    (index >= 90 && index < 96) ||
+    (index >= 98 && index < 104) ||
+    (index >= 108 && index < 112) ||
+    (index >= 116 && index < 118) ||
+    index >= 124
+  )
+  .map(([topic, question, answers, correct, explanation]) => ({ topic, question, answers, correct, explanation }));
 
 rebalanceDeepChoices(deepQuiz, 0);
