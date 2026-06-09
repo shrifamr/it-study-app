@@ -526,6 +526,35 @@ const basmaTricks = [
   }
 ];
 
+const chapterPractice = [
+  {
+    id: "chapter1",
+    title: "Chapter 1",
+    subtitle: "Computer basics, hardware/software, generations, types, Big Data intro.",
+    source: () => quiz.filter((q, index) => q.topic === "Ch1" && index < 25)
+  },
+  {
+    id: "chapter2",
+    title: "Chapter 2",
+    subtitle: "Data representation, number systems, CPU, memory, logic, machine cycle.",
+    source: () => quiz.filter((q, index) => q.topic === "Ch2" && index < 50)
+  },
+  {
+    id: "chapter3",
+    title: "Chapter 3",
+    subtitle: "System software, operating systems, utilities, application software.",
+    source: () => quiz.filter((q) => ["OS", "Utilities", "Software"].includes(q.topic))
+  },
+  {
+    id: "bigdata",
+    title: "Big Data",
+    subtitle: "Five V's, sources, analytics process, structured and unstructured data.",
+    source: () => quiz.filter((q) => q.topic === "Big Data")
+  }
+];
+
+let activeChapter = 0;
+
 let activeLesson = 0;
 let completed = new Set(JSON.parse(localStorage.getItem("itCompletedLessons") || "[]"));
 let currentQuestion = 0;
@@ -686,6 +715,44 @@ function renderBasma() {
   `;
 }
 
+function renderChapterPractice() {
+  const chapter = chapterPractice[activeChapter];
+  const questions = chapter.source();
+  $("#chapterTabs").innerHTML = chapterPractice.map((item, index) => `
+    <button class="chapter-tab ${index === activeChapter ? "active" : ""}" data-chapter="${index}">
+      ${item.title}
+    </button>
+  `).join("");
+  $("#chapterSummary").innerHTML = `
+    <strong>${chapter.title}</strong>
+    <span> - ${chapter.subtitle}</span>
+    <br>
+    <span>عدد الأسئلة: ${questions.length}</span>
+  `;
+  $("#chapterGrid").innerHTML = questions.map((q, index) => `
+    <article class="chapter-card">
+      <div class="review-meta">
+        <span>${chapter.title}</span>
+        <span>${q.topic}</span>
+        <span>سؤال ${index + 1}</span>
+      </div>
+      <h3>${q.question}</h3>
+      <ul>
+        ${q.answers.map((answer, answerIndex) => `
+          <li>${String.fromCharCode(97 + answerIndex)}) ${answer}</li>
+        `).join("")}
+      </ul>
+      <div class="chapter-answer">
+        <strong>الإجابة:</strong>
+        ${String.fromCharCode(97 + q.correct)}) ${q.answers[q.correct]}
+        <br>
+        <strong>الشرح:</strong>
+        ${q.explanation}
+      </div>
+    </article>
+  `).join("");
+}
+
 function reviewCard(type, index) {
   const isMcq = type === "mcq";
   const q = isMcq ? quiz[index] : trueFalseQuiz[index];
@@ -740,6 +807,13 @@ document.addEventListener("click", (event) => {
     if (nav.dataset.view === "wrong") renderWrongQuestions();
     if (nav.dataset.view === "favorites") renderFavorites();
     if (nav.dataset.view === "basma") renderBasma();
+    if (nav.dataset.view === "chapters") renderChapterPractice();
+  }
+
+  const chapterButton = event.target.closest(".chapter-tab");
+  if (chapterButton) {
+    activeChapter = Number(chapterButton.dataset.chapter);
+    renderChapterPractice();
   }
 
   const lessonButton = event.target.closest(".lesson-tab");
@@ -841,3 +915,4 @@ renderWrongQuestions();
 renderFavorites();
 renderSheet();
 renderBasma();
+renderChapterPractice();
