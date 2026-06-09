@@ -63,7 +63,7 @@ const deepQuizBank = [
   ["Number Systems","The fastest way from hex to binary is:",["Each hex digit becomes 4 bits","Each hex digit becomes 3 bits","Multiply by 8","Add ASCII"],0,"كل hex digit = 4 binary bits."],
   ["Number Systems","Binary 100110 split for octal should be:",["100 110","10 011 0","1001 10","1 00110"],0,"للتحويل إلى octal نقسم binary مجموعات 3 من اليمين."],
   ["Number Systems","Binary 10100101 split for hex should be:",["1010 0101","101 001 01","10 10 01 01","101001 01"],0,"للتحويل إلى hex نقسم مجموعات 4 من اليمين."],
-  ["Number Systems","If a binary-to-octal group is 010, it represents:",["2","8","10","4"],0,"010₂ = 2."],
+  ["Number Systems","If a binary-to-octal group is 010, it represents:",["2","8","10","4"],0,"في Octal كل مجموعة Binary من 3 bits. قيم الخانات من الشمال 4، 2، 1. إذن 010 = 0×4 + 1×2 + 0×1 = 2."],
   ["Number Systems","If decimal conversion asks you to use powers, base 16 means positions:",["1,16,256,...","1,8,64,...","1,2,4,...","1,10,100,..."],0,"كل نظام يستخدم قوى الأساس الخاص به."],
   ["Number Systems","A common mistake in decimal-to-octal is reading remainders top-to-bottom. The correct reading is:",["Bottom-to-top","Left-to-right as written first","Ignore remainders","Multiply all quotients"],0,"نقرأ البواقي من آخر قسمة إلى أول قسمة."],
   ["Number Systems","Which conversion is invalid as written without clarification: 49₈ to decimal?",["Invalid because 9 cannot be octal","Valid and equals 41","Valid and equals 49","Valid because any digit works"],0,"وجود 9 يكسر قاعدة octal."],
