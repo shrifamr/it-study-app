@@ -799,14 +799,16 @@ function renderChapterPractice() {
 
 function reviewCard(type, index) {
   const isMcq = type === "mcq";
-  const q = isMcq ? quiz[index] : trueFalseQuiz[index];
+  const isDeep = type === "deep";
+  const q = isDeep ? deepQuiz[index] : isMcq ? quiz[index] : trueFalseQuiz[index];
   const key = `${type}:${index}`;
-  const title = isMcq ? q.question : q.statement;
-  const correct = isMcq ? q.answers[q.correct] : q.correct ? "صح" : "غلط";
+  const title = isMcq || isDeep ? q.question : q.statement;
+  const correct = isMcq || isDeep ? q.answers[q.correct] : q.correct ? "صح" : "غلط";
+  const label = isDeep ? "فهم عميق" : isMcq ? "MCQ" : "صح/غلط";
   return `
     <article class="review-card">
       <div class="review-meta">
-        <span>${isMcq ? "MCQ" : "صح/غلط"}</span>
+        <span>${label}</span>
         <span>${q.topic}</span>
         <span>سؤال ${index + 1}</span>
       </div>
@@ -890,6 +892,7 @@ document.addEventListener("click", (event) => {
   const deepAnswer = event.target.closest(".answer-btn[data-deep-answer]");
   if (deepAnswer) {
     deepAnswersState[currentDeepQuestion] = Number(deepAnswer.dataset.deepAnswer);
+    markWrong("deep", currentDeepQuestion, deepAnswersState[currentDeepQuestion] === deepQuiz[currentDeepQuestion].correct);
     renderDeepQuiz();
   }
 
