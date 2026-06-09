@@ -496,10 +496,74 @@ h2 { font-size: 2rem; margin-bottom: 8px; }
   margin-bottom: 10px;
 }
 
-.chapter-card ul {
-  margin: 0;
-  padding-right: 20px;
-  line-height: 1.8;
+.chapter-options {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.chapter-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  padding: 10px 12px;
+  cursor: pointer;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.chapter-option:hover {
+  border-color: var(--green);
+  background: #f2fbf7;
+}
+
+.chapter-option span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 30px;
+  border-radius: 999px;
+  background: #eaf4f0;
+  color: var(--green);
+  font-weight: 900;
+}
+
+.chapter-option strong {
+  font-weight: 700;
+}
+
+.chapter-card.answered .chapter-option {
+  cursor: default;
+}
+
+.chapter-option.correct {
+  border-color: #16835f;
+  background: #e3f7ed;
+  color: #0f5c43;
+}
+
+.chapter-option.correct span {
+  background: #16835f;
+  color: #fff;
+}
+
+.chapter-option.wrong {
+  border-color: #c74747;
+  background: #fff0f0;
+  color: #7f1d1d;
+}
+
+.chapter-option.wrong span {
+  background: #c74747;
+  color: #fff;
 }
 
 .chapter-answer {

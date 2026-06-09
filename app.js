@@ -554,6 +554,7 @@ const chapterPractice = [
 ];
 
 let activeChapter = 0;
+let chapterAnswers = {};
 
 let activeLesson = 0;
 let completed = new Set(JSON.parse(localStorage.getItem("itCompletedLessons") || "[]"));
@@ -729,28 +730,44 @@ function renderChapterPractice() {
     <br>
     <span>عدد الأسئلة: ${questions.length}</span>
   `;
-  $("#chapterGrid").innerHTML = questions.map((q, index) => `
-    <article class="chapter-card">
-      <div class="review-meta">
-        <span>${chapter.title}</span>
-        <span>${q.topic}</span>
-        <span>سؤال ${index + 1}</span>
-      </div>
-      <h3>${q.question}</h3>
-      <ul>
-        ${q.answers.map((answer, answerIndex) => `
-          <li>${String.fromCharCode(97 + answerIndex)}) ${answer}</li>
-        `).join("")}
-      </ul>
-      <div class="chapter-answer">
-        <strong>الإجابة:</strong>
-        ${String.fromCharCode(97 + q.correct)}) ${q.answers[q.correct]}
-        <br>
-        <strong>الشرح:</strong>
-        ${q.explanation}
-      </div>
-    </article>
-  `).join("");
+  $("#chapterGrid").innerHTML = questions.map((q, index) => {
+    const answerKey = `${chapter.id}:${index}`;
+    const selectedAnswer = chapterAnswers[answerKey];
+    const isAnswered = selectedAnswer !== undefined;
+
+    return `
+      <article class="chapter-card ${isAnswered ? "answered" : ""}">
+        <div class="review-meta">
+          <span>${chapter.title}</span>
+          <span>${q.topic}</span>
+          <span>سؤال ${index + 1}</span>
+        </div>
+        <h3>${q.question}</h3>
+        <div class="chapter-options">
+          ${q.answers.map((answer, answerIndex) => {
+            const resultClass = isAnswered && answerIndex === q.correct
+              ? "correct"
+              : isAnswered && answerIndex === selectedAnswer
+                ? "wrong"
+                : "";
+            return `
+              <button class="chapter-option ${resultClass}" data-question-index="${index}" data-chapter-answer="${answerIndex}">
+                <span>${String.fromCharCode(97 + answerIndex)})</span>
+                <strong>${answer}</strong>
+              </button>
+            `;
+          }).join("")}
+        </div>
+        <div class="chapter-answer ${isAnswered ? "" : "hidden"}">
+          <strong>الإجابة:</strong>
+          ${String.fromCharCode(97 + q.correct)}) ${q.answers[q.correct]}
+          <br>
+          <strong>الشرح:</strong>
+          ${q.explanation}
+        </div>
+      </article>
+    `;
+  }).join("");
 }
 
 function reviewCard(type, index) {
@@ -813,6 +830,14 @@ document.addEventListener("click", (event) => {
   const chapterButton = event.target.closest(".chapter-tab");
   if (chapterButton) {
     activeChapter = Number(chapterButton.dataset.chapter);
+    renderChapterPractice();
+  }
+
+  const chapterAnswer = event.target.closest(".chapter-option");
+  if (chapterAnswer) {
+    const chapter = chapterPractice[activeChapter];
+    const questionIndex = Number(chapterAnswer.dataset.questionIndex);
+    chapterAnswers[`${chapter.id}:${questionIndex}`] = Number(chapterAnswer.dataset.chapterAnswer);
     renderChapterPractice();
   }
 
